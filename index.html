@@ -36,7 +36,6 @@
       background: var(--white);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     h1, h2 {
@@ -44,18 +43,8 @@
       font-weight: 400;
       color: var(--text-primary);
     }
-
-    h1 {
-      font-size: clamp(2.8rem, 5.5vw, 5rem);
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      line-height: 1.1;
-    }
-
+    h1 { font-size: clamp(2.8rem, 5.5vw, 5rem); line-height: 1.05; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(2rem, 3.5vw, 3.2rem); line-height: 1.1; }
     h3 {
       font-family: 'Inter', sans-serif;
       font-size: clamp(1rem, 1.5vw, 1.15rem);
@@ -64,11 +53,7 @@
       color: var(--text-primary);
     }
 
-    .container {
-      max-width: 1060px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
     .label {
       font-family: 'Inter', sans-serif;
@@ -79,14 +64,12 @@
       color: var(--wine);
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 48px;
-    }
-
+    .section-header { text-align: center; margin-bottom: 48px; }
     .section-header .label { margin-bottom: 16px; display: block; }
     .section-header h2 { margin-bottom: 16px; }
-    .section-header p { color: var(--text-muted); max-width: 520px; margin: 0 auto; font-size: 1rem; }
+    .section-header p { color: var(--text-muted); max-width: 520px; margin: 0 auto; }
+
+    .cta-wrap { text-align: center; margin-top: 48px; }
 
     /* Buttons */
     .btn {
@@ -104,27 +87,10 @@
       border-radius: 4px;
       transition: background 0.2s ease, color 0.2s ease;
     }
-
-    .btn-primary {
-      background: var(--wine);
-      color: var(--white);
-    }
+    .btn-primary { background: var(--wine); color: var(--white); }
     .btn-primary:hover { background: var(--wine-dark); }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--wine);
-      color: var(--wine);
-    }
-    .btn-outline:hover { background: var(--wine); color: var(--white); }
-
-    .btn-outline-white {
-      background: transparent;
-      border: 1px solid var(--white);
-      color: var(--white);
-    }
+    .btn-outline-white { background: transparent; border: 1px solid var(--white); color: var(--white); }
     .btn-outline-white:hover { background: var(--white); color: var(--navy); }
-
     .btn-block { width: 100%; }
 
     /* Reveal */
@@ -135,98 +101,104 @@
 
     /* ===== NAV ===== */
     .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 18px 0;
       transition: background 0.3s ease, border-color 0.3s ease;
       border-bottom: 1px solid transparent;
     }
-    .nav.scrolled {
-      background: var(--white);
-      border-bottom-color: var(--border);
-    }
-    .nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    .nav.scrolled { background: var(--white); border-bottom-color: var(--border); }
+    .nav .container { display: flex; align-items: center; justify-content: space-between; }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 18px;
-      color: var(--text-primary);
-      text-decoration: none;
+      font-weight: 400; font-size: 18px;
+      color: var(--text-primary); text-decoration: none;
     }
     .nav .btn { padding: 10px 24px; font-size: 13px; }
 
-    /* ===== HERO ===== */
+    /* ===== SECTION 1 — HERO (2 columns) ===== */
     .hero {
       background: var(--cream);
-      padding: clamp(120px, 14vw, 180px) 0 clamp(64px, 8vw, 100px);
-      text-align: center;
+      padding: clamp(120px, 14vw, 160px) 0 clamp(64px, 8vw, 100px);
     }
-    .hero-inner { max-width: 760px; margin: 0 auto; }
-    .hero .label { margin-bottom: 28px; display: block; }
-    .hero h1 { margin-bottom: 24px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-text .label { margin-bottom: 20px; display: block; }
+    .hero-text h1 { margin-bottom: 20px; }
     .hero-sub {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      max-width: 540px;
-      margin: 0 auto 36px;
+      font-size: 1.05rem; color: var(--text-muted); line-height: 1.75;
+      margin-bottom: 32px;
     }
     .hero-trust {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      margin-top: 16px;
+      font-size: 0.8rem; color: var(--text-light); margin-top: 16px;
     }
     .hero-image {
-      width: 100%;
-      max-width: 1060px;
-      height: 480px;
-      background: var(--cream-dark);
-      border-radius: 8px;
-      margin: 56px auto 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%; aspect-ratio: 4/5;
+      background: var(--cream-dark); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--text-light);
+      font-style: italic; color: var(--text-light); font-size: 1rem;
     }
 
-    /* ===== STATS ===== */
+    /* ===== SECTION 2 — SOCIAL PROOF BAR ===== */
     .stats {
       background: var(--navy);
-      padding: 52px 0;
+      padding: 48px 0;
     }
     .stats .container {
-      display: flex;
-      justify-content: center;
-      gap: clamp(40px, 6vw, 80px);
-      flex-wrap: wrap;
+      display: flex; justify-content: center;
+      gap: clamp(40px, 6vw, 80px); flex-wrap: wrap;
     }
     .stat { text-align: center; }
     .stat-number {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
-      font-size: clamp(2.4rem, 4vw, 3.2rem);
-      color: var(--white);
-      line-height: 1;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      color: var(--white); line-height: 1;
     }
-    .stat-label {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-      margin-top: 6px;
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 6px; }
+
+    /* ===== SECTION 3 — PAIN (address the largest pain point) ===== */
+    .pain-main {
+      background: var(--white);
+      padding: clamp(72px, 10vw, 120px) 0;
+      text-align: center;
+    }
+    .pain-main h2 { max-width: 680px; margin: 0 auto 20px; }
+    .pain-main > .container > p {
+      max-width: 560px; margin: 0 auto 40px;
+      color: var(--text-muted); font-size: 1rem; line-height: 1.8;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      margin-bottom: 8px;
+    }
+    .pain-card {
+      background: var(--cream);
+      padding: 28px 32px;
+      border-left: 2px solid var(--wine);
+      text-align: left;
+    }
+    .pain-card h3 { font-size: 0.95rem; font-weight: 500; color: var(--text-primary); }
+    .pain-card p { font-size: 0.9rem; color: var(--text-muted); margin-top: 6px; line-height: 1.6; }
+    .pain-closing {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-weight: 400;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      color: var(--text-primary);
+      max-width: 600px; margin: 48px auto 0;
+      line-height: 1.5;
     }
 
-    /* ===== TESTIMONIALS ===== */
+    /* ===== SECTION 4 — TESTIMONIALS (Social Proof Section) ===== */
     .testimonials {
-      background: var(--white);
+      background: var(--cream);
       padding: clamp(72px, 10vw, 120px) 0;
     }
     .test-grid {
@@ -235,270 +207,211 @@
       gap: 24px;
     }
     .test-card {
-      background: var(--cream);
+      background: var(--white);
       padding: 32px;
       border-radius: 4px;
     }
-    .test-dots {
-      display: flex;
-      gap: 4px;
-    }
-    .test-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--wine);
-    }
+    .test-dots { display: flex; gap: 4px; }
+    .test-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--wine); }
     .test-quote {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-style: italic;
-      font-size: 1.2rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      margin-top: 16px;
+      font-weight: 300; font-style: italic;
+      font-size: 1.15rem; line-height: 1.7;
+      color: var(--text-primary); margin-top: 16px;
     }
     .test-attr {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 20px;
-      padding-top: 16px;
+      font-size: 0.85rem; color: var(--text-muted);
+      margin-top: 20px; padding-top: 16px;
       border-top: 1px solid var(--border);
     }
 
-    /* ===== PAIN ===== */
-    .pain {
-      background: var(--cream);
+    /* ===== SECTION 5 — VALUE PROP #1 (image left, text right) ===== */
+    .value-prop {
       padding: clamp(72px, 10vw, 120px) 0;
     }
-    .pain-grid {
+    .value-prop.bg-white { background: var(--white); }
+    .value-prop.bg-cream { background: var(--cream); }
+
+    .vp-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      margin-bottom: 56px;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
     }
-    .pain-card {
-      background: var(--white);
-      padding: 28px 32px;
-      border-left: 2px solid var(--wine);
-    }
-    .pain-card h3 {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-    .pain-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-      line-height: 1.6;
-    }
-    .pain-closing {
-      text-align: center;
+    .vp-grid.reverse .vp-image { order: 2; }
+    .vp-grid.reverse .vp-text { order: 1; }
+
+    .vp-image {
+      width: 100%; aspect-ratio: 4/3;
+      background: var(--cream-dark); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-      color: var(--text-primary);
-      max-width: 640px;
-      margin: 0 auto;
-      line-height: 1.5;
+      font-style: italic; color: var(--text-light); font-size: 0.95rem;
+      text-align: center; padding: 24px;
+    }
+    .vp-image.dark {
+      background: var(--navy); color: rgba(255,255,255,0.4);
+    }
+    .vp-badge {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      background: var(--wine-muted); color: var(--wine);
+      padding: 4px 12px; border-radius: 2px;
+      margin-bottom: 16px;
+    }
+    .vp-text .label { margin-bottom: 12px; display: block; }
+    .vp-text h2 { margin-bottom: 16px; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    .vp-text p {
+      font-size: 0.95rem; color: var(--text-muted); line-height: 1.8;
+      margin-bottom: 28px;
     }
 
-    /* ===== AUTHOR ===== */
+    /* ===== SECTION 8 — AUTHOR / SOCIAL PROOF ===== */
     .author {
-      background: var(--white);
+      background: var(--cream);
       padding: clamp(72px, 10vw, 120px) 0;
     }
     .author-grid {
       display: grid;
-      grid-template-columns: 48fr 52fr;
-      gap: 0;
-      align-items: start;
-    }
-    .author-photo {
-      width: 100%;
-      height: 560px;
-      background: var(--cream-dark);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      color: var(--text-light);
-      font-size: 1rem;
-    }
-    .author-content { padding-left: 64px; }
-    .author-content .label { margin-bottom: 12px; display: block; }
-    .author-content h2 { margin-bottom: 4px; }
-    .author-subtitle {
-      font-size: 0.95rem;
-      color: var(--wine);
-      font-weight: 400;
-      margin-top: 4px;
-    }
-    .author-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 24px 0;
-    }
-    .author-bio {
-      font-size: 1rem;
-      line-height: 1.85;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-    .cred-tags { margin-bottom: 32px; }
-    .cred-tag {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      border: 1px solid var(--border);
-      padding: 5px 12px;
-      border-radius: 2px;
-      margin-right: 8px;
-      margin-bottom: 8px;
-      color: var(--text-muted);
-    }
-    .author-pullquote {
-      padding: 24px;
-      background: var(--wine-muted);
-      border-radius: 4px;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-style: italic;
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--text-primary);
-    }
-
-    /* ===== INSIDE ===== */
-    .inside {
-      background: var(--cream);
-      padding: clamp(72px, 10vw, 120px) 0;
-    }
-    .inside-grid {
-      display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 56px;
       align-items: start;
     }
-    .ebook-cover {
-      width: 280px;
-      height: 380px;
-      background: var(--navy);
-      border-radius: 4px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 32px;
-      position: sticky;
-      top: 120px;
-    }
-    .ebook-cover-title {
+    .author-photo {
+      width: 100%; aspect-ratio: 3/4;
+      background: var(--cream-dark); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 1.3rem;
-      color: var(--white);
-      text-align: center;
-      line-height: 1.3;
-      margin-bottom: 12px;
+      font-style: italic; color: var(--text-light); font-size: 1rem;
     }
-    .ebook-cover-author {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.55);
+    .author-content .label { margin-bottom: 12px; display: block; }
+    .author-content h2 { margin-bottom: 4px; }
+    .author-subtitle { font-size: 0.95rem; color: var(--wine); margin-top: 4px; }
+    .author-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+    .author-bio { font-size: 1rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 24px; }
+    .cred-tags { margin-bottom: 32px; }
+    .cred-tag {
+      display: inline-block;
+      font-size: 0.75rem; font-weight: 500;
+      border: 1px solid var(--border);
+      padding: 5px 12px; border-radius: 2px;
+      margin-right: 8px; margin-bottom: 8px;
+      color: var(--text-muted);
+    }
+    .author-pullquote {
+      padding: 24px; background: var(--wine-muted); border-radius: 4px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-style: italic;
+      font-size: 1.1rem; line-height: 1.8; color: var(--text-primary);
     }
 
-    /* Accordion shared */
-    .accordion details { border-bottom: 1px solid var(--border); }
-    .accordion summary {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      padding: 20px 0;
-      gap: 16px;
+    /* ===== SECTION 9 — DIFFERENTIATORS (6 cards grid) ===== */
+    .diff {
+      background: var(--white);
+      padding: clamp(72px, 10vw, 120px) 0;
     }
-    .accordion summary::-webkit-details-marker { display: none; }
-    .accordion .mod-num {
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .diff-card {
+      background: var(--cream);
+      padding: 28px 24px;
+      border-radius: 4px;
+    }
+    .diff-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-size: 2rem;
+      color: var(--border); line-height: 1;
+      margin-bottom: 12px;
+    }
+    .diff-card h3 { font-size: 0.92rem; font-weight: 500; margin-bottom: 8px; }
+    .diff-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ===== SECTION 10 — HOW IT WORKS (3 steps) ===== */
+    .how-works {
+      background: var(--cream);
+      padding: clamp(72px, 10vw, 120px) 0;
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+    .how-step-icon {
+      width: 72px; height: 72px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; color: var(--wine);
+    }
+    .how-step h3 { margin-bottom: 8px; }
+    .how-step p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ===== SECTION 11 — SECOND SOCIAL PROOF ===== */
+    .social-proof-2 {
+      background: var(--white);
+      padding: clamp(56px, 8vw, 80px) 0;
+    }
+    .sp2-quote {
+      max-width: 640px; margin: 0 auto;
+      text-align: center;
+    }
+    .sp2-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-style: italic;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      line-height: 1.6; color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+    .sp2-quote cite {
       font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--wine);
-      min-width: 24px;
+      font-style: normal;
+      font-size: 0.85rem; color: var(--text-muted);
     }
-    .accordion .mod-title {
+
+    /* ===== FAQ ===== */
+    .faq {
+      background: var(--cream);
+      padding: clamp(72px, 10vw, 120px) 0;
+    }
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-list details { border-bottom: 1px solid var(--border); }
+    .faq-list summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 0;
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      flex: 1;
+      font-size: 0.95rem; font-weight: 500;
+      color: var(--text-primary); line-height: 1.5;
     }
-    .accordion .chevron {
-      width: 10px;
-      height: 10px;
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .chevron {
+      width: 10px; height: 10px;
       border-right: 1.5px solid var(--text-muted);
       border-bottom: 1.5px solid var(--text-muted);
       transform: rotate(45deg);
       transition: transform 0.2s ease;
-      flex-shrink: 0;
+      flex-shrink: 0; margin-left: 24px;
     }
-    .accordion details[open] .chevron {
-      transform: rotate(-135deg);
-    }
-    .accordion .acc-body {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      padding: 0 0 20px 40px;
-      line-height: 1.75;
-    }
-    .inside .cta-wrap {
-      text-align: center;
-      margin-top: 40px;
+    details[open] .chevron { transform: rotate(-135deg); }
+    .faq-body {
+      font-size: 0.9rem; color: var(--text-muted);
+      padding: 0 0 22px; line-height: 1.75;
     }
 
-    /* ===== WHO FOR ===== */
-    .who-for {
+    /* ===== PRICING (final) ===== */
+    .pricing {
       background: var(--white);
       padding: clamp(72px, 10vw, 120px) 0;
     }
-    .who-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 56px;
-    }
-    .who-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: 3rem;
-      color: var(--border);
-      line-height: 1;
-    }
-    .who-card h3 {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-primary);
-    }
-    .who-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-      margin-top: 8px;
-    }
-
-    /* ===== PRICING ===== */
-    .pricing {
-      background: var(--cream);
-      padding: clamp(72px, 10vw, 120px) 0;
-    }
     .pricing-card {
-      max-width: 500px;
-      margin: 0 auto;
+      max-width: 500px; margin: 0 auto;
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: 4px;
@@ -506,118 +419,41 @@
       text-align: center;
     }
     .pricing-label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--wine);
-      margin-bottom: 24px;
+      font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--wine); margin-bottom: 24px;
     }
     .pricing-old {
-      font-size: 1rem;
-      text-decoration: line-through;
-      color: var(--text-light);
-      margin-right: 8px;
+      font-size: 1rem; text-decoration: line-through;
+      color: var(--text-light); margin-right: 8px;
     }
     .pricing-current {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 3.5rem;
-      color: var(--text-primary);
-      line-height: 1;
+      font-weight: 400; font-size: 3.5rem;
+      color: var(--text-primary); line-height: 1;
     }
-    .pricing-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
-    .pricing-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 32px 0;
-    }
-    .pricing-list {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 32px;
-    }
+    .pricing-desc { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; }
+    .pricing-divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+    .pricing-list { list-style: none; text-align: left; margin-bottom: 32px; }
     .pricing-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      padding: 7px 0;
-      line-height: 1.5;
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.9rem; color: var(--text-muted);
+      padding: 7px 0; line-height: 1.5;
     }
     .check-icon {
-      width: 14px;
-      height: 14px;
-      min-width: 14px;
+      width: 14px; height: 14px; min-width: 14px;
       border: 1.5px solid var(--wine);
-      border-radius: 2px;
-      position: relative;
-      margin-top: 3px;
+      border-radius: 2px; position: relative; margin-top: 3px;
     }
     .check-icon::after {
-      content: '';
-      position: absolute;
-      left: 3px;
-      top: 0px;
-      width: 4px;
-      height: 8px;
+      content: ''; position: absolute;
+      left: 3px; top: 0px;
+      width: 4px; height: 8px;
       border-right: 1.5px solid var(--wine);
       border-bottom: 1.5px solid var(--wine);
       transform: rotate(45deg);
     }
-    .pricing-secure {
-      font-size: 0.8rem;
-      color: var(--text-light);
-      margin-top: 16px;
-      text-align: center;
-    }
-
-    /* ===== FAQ ===== */
-    .faq {
-      background: var(--white);
-      padding: clamp(72px, 10vw, 120px) 0;
-    }
-    .faq-list {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .faq-list details { border-bottom: 1px solid var(--border); }
-    .faq-list summary {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 22px 0;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      line-height: 1.5;
-    }
-    .faq-list summary::-webkit-details-marker { display: none; }
-    .faq-list .chevron {
-      width: 10px;
-      height: 10px;
-      border-right: 1.5px solid var(--text-muted);
-      border-bottom: 1.5px solid var(--text-muted);
-      transform: rotate(45deg);
-      transition: transform 0.2s ease;
-      flex-shrink: 0;
-      margin-left: 24px;
-    }
-    .faq-list details[open] .chevron { transform: rotate(-135deg); }
-    .faq-list .faq-body {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      padding: 0 0 22px;
-      line-height: 1.75;
-    }
+    .pricing-secure { font-size: 0.8rem; color: var(--text-light); margin-top: 16px; text-align: center; }
 
     /* ===== FINAL CTA ===== */
     .final-cta {
@@ -625,23 +461,13 @@
       padding: clamp(72px, 10vw, 120px) 0;
       text-align: center;
     }
-    .final-cta h2 {
-      color: var(--white);
-      max-width: 640px;
-      margin: 0 auto 20px;
-    }
+    .final-cta h2 { color: var(--white); max-width: 640px; margin: 0 auto 20px; }
     .final-cta-sub {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.8;
-      max-width: 480px;
+      font-size: 1rem; color: rgba(255,255,255,0.6);
+      line-height: 1.8; max-width: 480px;
       margin: 0 auto 36px;
     }
-    .final-cta-note {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.45);
-      margin-top: 16px;
-    }
+    .final-cta-note { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 16px; }
 
     /* ===== FOOTER ===== */
     .footer {
@@ -650,81 +476,63 @@
       padding: 32px 0;
     }
     .footer .container {
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
+      flex-wrap: wrap; gap: 16px;
     }
     .footer-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: 16px;
-      color: var(--white);
+      font-weight: 400; font-size: 16px; color: var(--white);
     }
-    .footer-copy {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.35);
-    }
-    .footer-links {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.45);
-    }
-    .footer-links a {
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-links { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
+    .footer-links a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--white); }
 
-    /* ===== STICKY MOBILE BAR ===== */
+    /* ===== STICKY MOBILE ===== */
     .sticky-bar {
       display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
-      background: var(--wine);
-      height: 60px;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 200; background: var(--wine); height: 60px;
     }
     .sticky-bar a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; height: 100%;
       color: var(--white);
       font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 14px;
-      letter-spacing: 0.04em;
-      text-decoration: none;
+      font-weight: 500; font-size: 14px;
+      letter-spacing: 0.04em; text-decoration: none;
     }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1023px) {
-      .test-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-text { text-align: center; }
+      .hero-image { max-width: 400px; margin: 0 auto; }
+      .vp-grid { grid-template-columns: 1fr; gap: 40px; }
+      .vp-grid.reverse .vp-image { order: 0; }
+      .vp-grid.reverse .vp-text { order: 0; }
+      .vp-image { max-width: 480px; margin: 0 auto; aspect-ratio: 16/10; }
+      .vp-text { text-align: center; }
       .author-grid { grid-template-columns: 1fr; gap: 48px; }
-      .author-content { padding-left: 0; }
-      .author-photo { height: 400px; max-width: 480px; margin: 0 auto; }
-      .inside-grid { grid-template-columns: 1fr; gap: 40px; }
-      .ebook-cover { margin: 0 auto; position: static; }
+      .author-photo { max-width: 400px; margin: 0 auto; }
+      .test-grid { grid-template-columns: repeat(2, 1fr); }
+      .diff-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 767px) {
       .test-grid { grid-template-columns: 1fr; }
       .pain-grid { grid-template-columns: 1fr; }
-      .who-grid { grid-template-columns: 1fr; gap: 40px; }
-      .hero-image { height: 280px; }
-      .author-photo { height: 320px; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: 1fr; gap: 32px; }
+      .who-grid { grid-template-columns: 1fr; }
       .pricing-card { padding: 36px 24px; }
       .sticky-bar { display: block; }
       .footer { padding-bottom: 76px; }
       .footer .container { flex-direction: column; text-align: center; }
-      .stats .container { gap: 28px; }
-      .stat-number { font-size: clamp(1.8rem, 4vw, 2.4rem); }
-      .ebook-cover { width: 220px; height: 300px; }
+      .stats .container { gap: 24px; }
+      .stat-number { font-size: clamp(1.8rem, 4vw, 2.2rem); }
+      .hero-image { aspect-ratio: 1/1; }
     }
   </style>
 </head>
@@ -738,43 +546,51 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- SECTION 1 — HERO (2 columns: text left, image right) -->
   <section class="hero">
     <div class="container">
-      <div class="hero-inner reveal">
-        <span class="label">Dra. Vanessa Flores &middot; Psiquiatra</span>
-        <h1>[TITLE_PLACEHOLDER]</h1>
-        <p class="hero-sub">La gu&iacute;a que explica lo que ninguna consulta tuvo tiempo de decirte.</p>
-        <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a>
-        <p class="hero-trust">Pago seguro &middot; Descarga inmediata &middot; Garant&iacute;a 7 d&iacute;as</p>
+      <div class="hero-grid">
+        <div class="hero-text reveal">
+          <span class="label">Dra. Vanessa Flores &middot; Psiquiatra</span>
+          <h1>[TITLE_PLACEHOLDER]</h1>
+          <p class="hero-sub">La gu&iacute;a que explica lo que ninguna consulta tuvo tiempo de decirte. Escrita por una psiquiatra que ha acompa&ntilde;ado a cientos de adultos con TDA.</p>
+          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a>
+          <p class="hero-trust">Pago seguro &middot; Descarga inmediata &middot; Garant&iacute;a 7 d&iacute;as</p>
+        </div>
+        <div class="hero-image reveal reveal-d1">Foto de la Dra. Vanessa Flores</div>
       </div>
-      <div class="hero-image reveal">Foto de la Dra. Vanessa Flores</div>
     </div>
   </section>
 
-  <!-- STATS -->
+  <!-- SECTION 2 — SOCIAL PROOF BAR -->
   <section class="stats">
     <div class="container">
-      <div class="stat reveal">
-        <div class="stat-number">500+</div>
-        <div class="stat-label">Personas</div>
-      </div>
-      <div class="stat reveal reveal-d1">
-        <div class="stat-number">4.9/5</div>
-        <div class="stat-label">Valoraci&oacute;n</div>
-      </div>
-      <div class="stat reveal reveal-d1">
-        <div class="stat-number">PDF</div>
-        <div class="stat-label">Descarga inmediata</div>
-      </div>
-      <div class="stat reveal reveal-d2">
-        <div class="stat-number">7 d&iacute;as</div>
-        <div class="stat-label">Garant&iacute;a</div>
-      </div>
+      <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Personas</div></div>
+      <div class="stat"><div class="stat-number">4.9/5</div><div class="stat-label">Valoraci&oacute;n</div></div>
+      <div class="stat"><div class="stat-number">PDF</div><div class="stat-label">Descarga inmediata</div></div>
+      <div class="stat"><div class="stat-number">7 d&iacute;as</div><div class="stat-label">Garant&iacute;a</div></div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- SECTION 3 — PAIN (address the largest pain point) -->
+  <section class="pain-main">
+    <div class="container">
+      <h2 class="reveal">Si llegaste aqu&iacute;, probablemente esto te suena</h2>
+      <p class="reveal reveal-d1">Llevas a&ntilde;os sinti&eacute;ndote en desventaja sin entender por qu&eacute;. Nada de lo que intentas se mantiene. Y la culpa crece con cada nuevo intento fallido.</p>
+      <div class="pain-grid">
+        <div class="pain-card reveal"><h3>Te esfuerzas m&aacute;s que todos</h3><p>Y aun as&iacute; sientes que siempre llegas tarde a todo.</p></div>
+        <div class="pain-card reveal reveal-d1"><h3>Tu mente no para, pero cuando necesitas enfocarte, desaparece</h3><p>El ciclo de hiperfoco y bloqueo que nadie explica.</p></div>
+        <div class="pain-card reveal"><h3>Por fuera todo parece bien. Por dentro, caos</h3><p>Has aprendido a enmascararlo tan bien que nadie lo nota.</p></div>
+        <div class="pain-card reveal reveal-d1"><h3>Llevas a&ntilde;os creyendo que eres el problema</h3><p>Demasiado intenso/a. Demasiado sensible. Demasiado todo.</p></div>
+        <div class="pain-card reveal"><h3>Empiezas cien cosas y terminas pocas</h3><p>Y la culpa que eso genera es peor que el caos.</p></div>
+        <div class="pain-card reveal reveal-d1"><h3>Ya lo intentaste todo y nada funciona</h3><p>Porque ninguna soluci&oacute;n fue dise&ntilde;ada para c&oacute;mo funciona tu mente.</p></div>
+      </div>
+      <p class="pain-closing reveal">&ldquo;No est&aacute;s roto/a. Nadie te hab&iacute;a dado las herramientas correctas.&rdquo;</p>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a></div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — TESTIMONIALS (Social Proof Section) -->
   <section class="testimonials">
     <div class="container">
       <div class="section-header">
@@ -799,46 +615,57 @@
           <p class="test-attr">C.V., 38 a&ntilde;os</p>
         </div>
       </div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a></div>
     </div>
   </section>
 
-  <!-- PAIN -->
-  <section class="pain">
+  <!-- SECTION 5 — VALUE PROP #1 (image left, text right) -->
+  <section class="value-prop bg-white">
     <div class="container">
-      <div class="section-header">
-        <h2>Si llegaste aqu&iacute;, probablemente esto te suena</h2>
-      </div>
-      <div class="pain-grid">
-        <div class="pain-card reveal">
-          <h3>Te esfuerzas m&aacute;s que todos</h3>
-          <p>Y aun as&iacute; sientes que siempre llegas tarde a todo.</p>
-        </div>
-        <div class="pain-card reveal reveal-d1">
-          <h3>Tu mente no para, pero cuando necesitas enfocarte, desaparece</h3>
-          <p>El ciclo de hiperfoco y bloqueo que nadie explica.</p>
-        </div>
-        <div class="pain-card reveal">
-          <h3>Por fuera todo parece bien. Por dentro, caos</h3>
-          <p>Has aprendido a enmascararlo tan bien que nadie lo nota.</p>
-        </div>
-        <div class="pain-card reveal reveal-d1">
-          <h3>Llevas a&ntilde;os creyendo que eres el problema</h3>
-          <p>Demasiado intenso/a. Demasiado sensible. Demasiado todo.</p>
-        </div>
-        <div class="pain-card reveal">
-          <h3>Empiezas cien cosas y terminas pocas</h3>
-          <p>Y la culpa que eso genera es peor que el caos.</p>
-        </div>
-        <div class="pain-card reveal reveal-d1">
-          <h3>Ya lo intentaste todo y nada funciona de forma consistente</h3>
-          <p>Porque ninguna soluci&oacute;n fue dise&ntilde;ada para c&oacute;mo funciona tu mente.</p>
+      <div class="vp-grid reveal">
+        <div class="vp-image">Imagen que refuerza la propuesta de valor</div>
+        <div class="vp-text">
+          <span class="label">Lo que descubrir&aacute;s</span>
+          <h2>Por qu&eacute; tu cerebro funciona diferente</h2>
+          <p>La explicaci&oacute;n real del TDA en adultos. Sin filtros, sin tecnicismos, sin hacerte sentir que algo est&aacute; mal contigo. Entender&aacute;s la ciencia detr&aacute;s de lo que sientes todos los d&iacute;as y por qu&eacute; las soluciones gen&eacute;ricas nunca te funcionaron.</p>
+          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a>
         </div>
       </div>
-      <p class="pain-closing reveal">&ldquo;No est&aacute;s roto/a. Nadie te hab&iacute;a dado las herramientas correctas.&rdquo;</p>
     </div>
   </section>
 
-  <!-- AUTHOR -->
+  <!-- SECTION 6 — VALUE PROP #2 (text left, image right — reversed) -->
+  <section class="value-prop bg-cream">
+    <div class="container">
+      <div class="vp-grid reverse reveal">
+        <div class="vp-image dark">Imagen que complementa y refuerza</div>
+        <div class="vp-text">
+          <span class="vp-badge">Paso a paso</span>
+          <span class="label">El patr&oacute;n oculto</span>
+          <h2>El ciclo de compensaci&oacute;n que te agota</h2>
+          <p>Por qu&eacute; das el 200% y a&uacute;n sientes que no alcanzas. La gu&iacute;a te muestra el mecanismo invisible que mantiene a miles de adultos con TDA atrapados en un loop de esfuerzo, agotamiento y culpa. Y c&oacute;mo empezar a salir de &eacute;l.</p>
+          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 — VALUE PROP #3 (image left, text right) -->
+  <section class="value-prop bg-white">
+    <div class="container">
+      <div class="vp-grid reveal">
+        <div class="vp-image">Imagen que complementa la propuesta</div>
+        <div class="vp-text">
+          <span class="label">El primer paso</span>
+          <h2>Qu&eacute; hacer con este conocimiento desde hoy</h2>
+          <p>La gu&iacute;a no solo explica. Te da orientaci&oacute;n pr&aacute;ctica sobre pr&oacute;ximos pasos: cu&aacute;ndo buscar ayuda profesional, c&oacute;mo hablar de esto con tu entorno y qu&eacute; cambios peque&ntilde;os generan el mayor impacto.</p>
+          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8 — AUTHOR (Social Proof / Authority) -->
   <section class="author">
     <div class="container">
       <div class="author-grid">
@@ -857,109 +684,129 @@
           <div class="author-pullquote">&ldquo;Escrib&iacute; esta gu&iacute;a porque el TDA en adultos est&aacute; siendo ignorado. Mis pacientes merec&iacute;an esta informaci&oacute;n antes de llegar a la consulta, no despu&eacute;s.&rdquo;</div>
         </div>
       </div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a></div>
     </div>
   </section>
 
-  <!-- WHAT'S INSIDE -->
-  <section class="inside">
+  <!-- SECTION 9 — DIFFERENTIATORS (6 cards 3x2 grid) -->
+  <section class="diff">
     <div class="container">
       <div class="section-header">
-        <h2>Lo que vas a encontrar</h2>
-        <p>Escrito en lenguaje claro. Sin tecnicismos. Directo al punto.</p>
+        <h2>Lo que hace diferente a esta gu&iacute;a</h2>
+        <p>No es un art&iacute;culo m&aacute;s de internet. Es informaci&oacute;n cl&iacute;nica real, escrita con empat&iacute;a.</p>
       </div>
-      <div class="inside-grid">
-        <div class="ebook-cover reveal">
-          <div class="ebook-cover-title">[TITLE_PLACEHOLDER]</div>
-          <div class="ebook-cover-author">Dra. Vanessa Flores</div>
+      <div class="diff-grid">
+        <div class="diff-card reveal">
+          <div class="diff-num">01</div>
+          <h3>Escrita por una psiquiatra activa</h3>
+          <p>No es teor&iacute;a. Es experiencia cl&iacute;nica real con pacientes reales.</p>
         </div>
-        <div class="reveal reveal-d1">
-          <div class="accordion">
-            <details>
-              <summary>
-                <span class="mod-num">01</span>
-                <span class="mod-title">Por qu&eacute; tu cerebro funciona diferente</span>
-                <span class="chevron"></span>
-              </summary>
-              <div class="acc-body">La explicaci&oacute;n real del TDA en adultos, sin filtros ni tecnicismos.</div>
-            </details>
-            <details>
-              <summary>
-                <span class="mod-num">02</span>
-                <span class="mod-title">El ciclo de compensaci&oacute;n que te agota</span>
-                <span class="chevron"></span>
-              </summary>
-              <div class="acc-body">Por qu&eacute; das el 200% y a&uacute;n sientes que no alcanzas.</div>
-            </details>
-            <details>
-              <summary>
-                <span class="mod-num">03</span>
-                <span class="mod-title">C&oacute;mo el TDA se disfraza en adultos</span>
-                <span class="chevron"></span>
-              </summary>
-              <div class="acc-body">Los s&iacute;ntomas invisibles que el sistema m&eacute;dico ignor&oacute; por a&ntilde;os.</div>
-            </details>
-            <details>
-              <summary>
-                <span class="mod-num">04</span>
-                <span class="mod-title">Tu sistema nervioso en modo alerta permanente</span>
-                <span class="chevron"></span>
-              </summary>
-              <div class="acc-body">La conexi&oacute;n entre TDA, ansiedad y agotamiento cr&oacute;nico.</div>
-            </details>
-            <details>
-              <summary>
-                <span class="mod-num">05</span>
-                <span class="mod-title">El primer paso real hacia el cambio</span>
-                <span class="chevron"></span>
-              </summary>
-              <div class="acc-body">Qu&eacute; hacer con este conocimiento desde hoy, de forma pr&aacute;ctica.</div>
-            </details>
-            <details>
-              <summary>
-                <span class="mod-num">06</span>
-                <span class="mod-title">Cu&aacute;ndo y c&oacute;mo buscar ayuda profesional</span>
-                <span class="chevron"></span>
-              </summary>
-              <div class="acc-body">Sin miedo, sin estigma, con claridad total.</div>
-            </details>
-          </div>
-          <div class="cta-wrap">
-            <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a>
-          </div>
+        <div class="diff-card reveal reveal-d1">
+          <div class="diff-num">02</div>
+          <h3>Lenguaje claro, sin jerga</h3>
+          <p>Explicaciones que cualquier persona puede entender y aplicar.</p>
+        </div>
+        <div class="diff-card reveal reveal-d2">
+          <div class="diff-num">03</div>
+          <h3>Enfocada en adultos</h3>
+          <p>El TDA en adultos se vive diferente. Esta gu&iacute;a lo reconoce.</p>
+        </div>
+        <div class="diff-card reveal">
+          <div class="diff-num">04</div>
+          <h3>Aborda ansiedad y agotamiento</h3>
+          <p>La conexi&oacute;n entre TDA, ansiedad cr&oacute;nica y burnout explicada.</p>
+        </div>
+        <div class="diff-card reveal reveal-d1">
+          <div class="diff-num">05</div>
+          <h3>Con orientaci&oacute;n pr&aacute;ctica</h3>
+          <p>Cada secci&oacute;n incluye pr&oacute;ximos pasos concretos y aplicables.</p>
+        </div>
+        <div class="diff-card reveal reveal-d2">
+          <div class="diff-num">06</div>
+          <h3>Sin estigma, sin juicio</h3>
+          <p>Escrita desde la empat&iacute;a. Para entenderte, no para etiquetarte.</p>
         </div>
       </div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a></div>
     </div>
   </section>
 
-  <!-- WHO IT'S FOR -->
-  <section class="who-for">
+  <!-- SECTION 10 — HOW IT WORKS (3 steps) -->
+  <section class="how-works">
     <div class="container">
       <div class="section-header">
-        <h2>Esta gu&iacute;a es para ti si...</h2>
+        <h2>C&oacute;mo funciona</h2>
+        <p>Tres pasos simples. Sin complicaciones.</p>
       </div>
-      <div class="who-grid">
-        <div class="who-card reveal">
-          <div class="who-num">1</div>
-          <h3>Sospechas que tienes TDA pero nadie te lo ha diagnosticado</h3>
-          <p>Llevas a&ntilde;os sinti&eacute;ndote diferente sin tener un nombre para eso.</p>
+      <div class="how-grid">
+        <div class="how-step reveal">
+          <div class="how-step-icon">1</div>
+          <h3>Compra la gu&iacute;a</h3>
+          <p>Pago seguro con tarjeta. Proceso en menos de 2 minutos.</p>
         </div>
-        <div class="who-card reveal reveal-d1">
-          <div class="who-num">2</div>
-          <h3>Tienes diagn&oacute;stico pero nadie te explic&oacute; qu&eacute; significa en tu vida diaria</h3>
-          <p>El papel dice TDA. Tu d&iacute;a a d&iacute;a sigue siendo un caos sin sistema.</p>
+        <div class="how-step reveal reveal-d1">
+          <div class="how-step-icon">2</div>
+          <h3>Descarga el PDF</h3>
+          <p>Acceso inmediato. Compatible con cualquier dispositivo.</p>
         </div>
-        <div class="who-card reveal reveal-d2">
-          <div class="who-num">3</div>
-          <h3>Est&aacute;s agotado/a de compensar y quieres entender tu mente</h3>
-          <p>Sin m&aacute;s culpa. Sin m&aacute;s &ldquo;esfu&eacute;rzate m&aacute;s&rdquo;. Con informaci&oacute;n real.</p>
+        <div class="how-step reveal reveal-d2">
+          <div class="how-step-icon">3</div>
+          <h3>Entiende tu mente</h3>
+          <p>Lee a tu ritmo. Cada cap&iacute;tulo te acerca a entender lo que sientes.</p>
         </div>
+      </div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a — $24</a></div>
+    </div>
+  </section>
+
+  <!-- SECTION 11 — SECOND SOCIAL PROOF (single quote) -->
+  <section class="social-proof-2">
+    <div class="container">
+      <div class="sp2-quote reveal">
+        <div class="test-dots" style="justify-content:center; margin-bottom: 20px;"><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span></div>
+        <blockquote>&ldquo;Pens&eacute; que era floja toda la vida. Esta gu&iacute;a me hizo entender que mi cerebro simplemente funciona diferente. Fue un alivio enorme.&rdquo;</blockquote>
+        <cite>L.M., 36 a&ntilde;os &middot; M&eacute;xico</cite>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- SECTION 12 — FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details>
+          <summary><span>Necesito tener un diagn&oacute;stico para leer esto?</span><span class="chevron"></span></summary>
+          <div class="faq-body">No. Est&aacute; escrita para cualquier persona que se identifique con los s&iacute;ntomas, con o sin diagn&oacute;stico formal.</div>
+        </details>
+        <details>
+          <summary><span>Reemplaza una consulta psiqui&aacute;trica?</span><span class="chevron"></span></summary>
+          <div class="faq-body">No. Es una herramienta de comprensi&oacute;n y orientaci&oacute;n. La gu&iacute;a incluye claridad sobre cu&aacute;ndo buscar ayuda profesional.</div>
+        </details>
+        <details>
+          <summary><span>En qu&eacute; formato lo recibo?</span><span class="chevron"></span></summary>
+          <div class="faq-body">PDF de descarga inmediata. Compatible con cualquier dispositivo.</div>
+        </details>
+        <details>
+          <summary><span>Funciona si tengo TDA y tambi&eacute;n ansiedad?</span><span class="chevron"></span></summary>
+          <div class="faq-body">S&iacute;. La gu&iacute;a aborda espec&iacute;ficamente c&oacute;mo TDA, ansiedad y agotamiento cr&oacute;nico se entrelazan en adultos.</div>
+        </details>
+        <details>
+          <summary><span>Qu&eacute; pasa si no me sirve?</span><span class="chevron"></span></summary>
+          <div class="faq-body">Tienes 7 d&iacute;as de garant&iacute;a de devoluci&oacute;n total. Sin preguntas.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 13 — PRICING (final purchase section) -->
   <section class="pricing" id="pricing">
     <div class="container">
+      <div class="section-header">
+        <h2>Tu gu&iacute;a, ahora mismo</h2>
+      </div>
       <div class="pricing-card reveal">
         <p class="pricing-label">Acceso completo</p>
         <div>
@@ -977,52 +824,6 @@
         </ul>
         <a href="#" class="btn btn-primary btn-block">Obtener la gu&iacute;a ahora</a>
         <p class="pricing-secure">Pago seguro &middot; Acceso en menos de 2 minutos</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2>Preguntas frecuentes</h2>
-      </div>
-      <div class="faq-list reveal">
-        <details>
-          <summary>
-            <span>Necesito tener un diagn&oacute;stico para leer esto?</span>
-            <span class="chevron"></span>
-          </summary>
-          <div class="faq-body">No. Est&aacute; escrita para cualquier persona que se identifique con los s&iacute;ntomas, con o sin diagn&oacute;stico formal.</div>
-        </details>
-        <details>
-          <summary>
-            <span>Reemplaza una consulta psiqui&aacute;trica?</span>
-            <span class="chevron"></span>
-          </summary>
-          <div class="faq-body">No. Es una herramienta de comprensi&oacute;n y orientaci&oacute;n. La gu&iacute;a incluye claridad sobre cu&aacute;ndo buscar ayuda profesional.</div>
-        </details>
-        <details>
-          <summary>
-            <span>En qu&eacute; formato lo recibo?</span>
-            <span class="chevron"></span>
-          </summary>
-          <div class="faq-body">PDF de descarga inmediata. Compatible con cualquier dispositivo.</div>
-        </details>
-        <details>
-          <summary>
-            <span>Funciona si tengo TDA y tambi&eacute;n ansiedad?</span>
-            <span class="chevron"></span>
-          </summary>
-          <div class="faq-body">S&iacute;. La gu&iacute;a aborda espec&iacute;ficamente c&oacute;mo TDA, ansiedad y agotamiento cr&oacute;nico se entrelazan en adultos.</div>
-        </details>
-        <details>
-          <summary>
-            <span>Qu&eacute; pasa si no me sirve?</span>
-            <span class="chevron"></span>
-          </summary>
-          <div class="faq-body">Tienes 7 d&iacute;as de garant&iacute;a de devoluci&oacute;n total. Sin preguntas.</div>
-        </details>
       </div>
     </div>
   </section>
