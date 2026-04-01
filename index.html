@@ -613,35 +613,125 @@
       letter-spacing: 0.04em; text-decoration: none;
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* ===== TABLET (768–1023px) ===== */
     @media (max-width: 1023px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
       .hero-text { text-align: center; }
-      .hero-image { max-width: 400px; margin: 0 auto; }
-      .vp-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-image { max-width: 380px; margin: 0 auto; aspect-ratio: 3/4; }
+      .vp-grid { grid-template-columns: 1fr; gap: 32px; }
       .vp-grid.reverse .vp-image { order: 0; }
       .vp-grid.reverse .vp-text { order: 0; }
-      .vp-image { max-width: 480px; margin: 0 auto; aspect-ratio: 16/10; }
+      .vp-image { max-width: 460px; margin: 0 auto; aspect-ratio: 16/10; }
       .vp-text { text-align: center; }
-      .author-grid { grid-template-columns: 1fr; gap: 48px; }
-      .author-photo { max-width: 400px; margin: 0 auto; }
+      .vp-text .btn { margin-top: 8px; }
+      .author-grid { grid-template-columns: 1fr; gap: 40px; }
+      .author-photo { max-width: 360px; margin: 0 auto; aspect-ratio: 3/4; }
+      .author-content { text-align: center; }
+      .cred-tags { justify-content: center; display: flex; }
+      .author-pullquote { text-align: left; }
       .test-grid { grid-template-columns: repeat(2, 1fr); }
       .diff-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-header { margin-bottom: 36px; }
+      .cta-wrap { margin-top: 36px; }
     }
 
+    /* ===== MOBILE (≤767px) ===== */
     @media (max-width: 767px) {
-      .test-grid { grid-template-columns: 1fr; }
-      .pain-grid { grid-template-columns: 1fr; }
-      .diff-grid { grid-template-columns: 1fr; }
-      .how-grid { grid-template-columns: 1fr; gap: 32px; }
-      .who-grid { grid-template-columns: 1fr; }
-      .pricing-card { padding: 36px 24px; }
+      /* Reduce section padding — less heavy on scroll */
+      .pain-main, .testimonials, .diff, .how-works, .faq, .pricing,
+      .value-prop, .author, .who-for {
+        padding: clamp(48px, 8vw, 64px) 0;
+      }
+      .final-cta { padding: 48px 0; }
+      .section-header { margin-bottom: 28px; }
+      .cta-wrap { margin-top: 32px; }
+
+      /* Hero */
+      .hero { padding: 100px 0 48px; }
+      .hero-image { max-width: 260px; aspect-ratio: 3/4; }
+      h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
+
+      /* Stats bar — 2x2 grid instead of row */
+      .stats { padding: 32px 0; }
+      .stats .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        text-align: center;
+      }
+      .stat-number { font-size: 1.8rem; }
+
+      /* Grids go single column */
+      .test-grid { grid-template-columns: 1fr; gap: 16px; }
+      .pain-grid { grid-template-columns: 1fr; gap: 1px; }
+      .diff-grid { grid-template-columns: 1fr; gap: 12px; }
+      .how-grid { grid-template-columns: 1fr; gap: 24px; }
+      .who-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      /* Cards — lighter padding on mobile */
+      .test-card { padding: 24px 20px; }
+      .pain-card { padding: 20px 24px; }
+      .diff-card { padding: 22px 20px; }
+      .pricing-card { padding: 32px 20px; }
+      .pricing-current { font-size: 3rem; }
+
+      /* Value props — tighter on mobile */
+      .vp-image { max-width: 100%; aspect-ratio: 4/3; }
+      .vp-text p { font-size: 0.9rem; margin-bottom: 20px; }
+
+      /* Author */
+      .author-photo { max-width: 280px; aspect-ratio: 1/1; }
+      .author-bio { font-size: 0.92rem; }
+      .author-pullquote { font-size: 1rem; padding: 20px; }
+
+      /* FAQ — smaller text */
+      .faq-list summary { font-size: 0.9rem; padding: 18px 0; }
+      .faq-body { font-size: 0.85rem; padding-bottom: 18px; }
+      .faq-list details[open] {
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-left: -12px;
+        margin-right: -12px;
+      }
+
+      /* Buttons — full width on mobile */
+      .btn { width: 100%; justify-content: center; padding: 14px 24px; }
+      .nav .btn { width: auto; padding: 10px 20px; font-size: 12px; }
+
+      /* Sticky bar + footer */
       .sticky-bar { display: block; }
-      .footer { padding-bottom: 76px; }
-      .footer .container { flex-direction: column; text-align: center; }
-      .stats .container { gap: 24px; }
-      .stat-number { font-size: clamp(1.8rem, 4vw, 2.2rem); }
-      .hero-image { aspect-ratio: 1/1; }
+      .footer { padding: 24px 0 80px; }
+      .footer .container { flex-direction: column; text-align: center; gap: 8px; }
+
+      /* Disable hover effects on touch */
+      .test-card:hover,
+      .diff-card:hover,
+      .how-step:hover,
+      .pricing-card:hover { transform: none; box-shadow: none; }
+      .pain-card:hover { transform: none; border-left-width: 2px; background: var(--cream); }
+      .how-step:hover .how-step-icon { background: transparent; color: var(--wine); border-color: var(--border); }
+
+      /* Simpler animations on mobile — less movement */
+      .reveal { transform: translateY(20px); }
+      .reveal-left { transform: translateY(20px); }
+      .reveal-right { transform: translateY(20px); }
+    }
+
+    /* ===== SMALL MOBILE (≤480px) ===== */
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero { padding: 88px 0 40px; }
+      .hero-image { max-width: 220px; }
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: clamp(1.6rem, 5vw, 2rem); }
+      .hero-sub { font-size: 0.95rem; margin-bottom: 24px; }
+      .hero-trust { font-size: 0.72rem; }
+      .nav-logo { font-size: 15px; }
+      .pain-closing { font-size: 1.15rem; margin-top: 32px; }
+      .sp2-quote blockquote { font-size: 1.15rem; }
+      .who-num { font-size: 2.4rem; }
+      .stat-number { font-size: 1.5rem; }
+      .stat-label { font-size: 0.75rem; }
     }
   </style>
 </head>
