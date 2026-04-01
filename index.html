@@ -274,6 +274,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
+    .test-dots-nav { display: none; }
     .test-card {
       background: var(--white);
       padding: 32px;
@@ -668,8 +669,37 @@
       .stat-number { font-size: 1.5rem; }
       .stat-label { font-size: 0.72rem; }
 
+      /* Testimonials — horizontal scroll carousel */
+      .test-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+      }
+      .test-grid::-webkit-scrollbar { display: none; }
+      .test-card {
+        min-width: 85vw;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+      }
+      .test-dots-nav {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .test-dots-nav span {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: var(--border);
+        transition: background 0.3s ease;
+      }
+      .test-dots-nav span.active { background: var(--wine); }
+
       /* Grids go single column */
-      .test-grid { grid-template-columns: 1fr; gap: 16px; }
       .pain-grid { grid-template-columns: 1fr; gap: 1px; }
       .diff-grid { grid-template-columns: 1fr; gap: 12px; }
       .how-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -824,6 +854,7 @@
           <p class="test-attr">C.V., 38 a&ntilde;os</p>
         </div>
       </div>
+      <div class="test-dots-nav"><span class="active"></span><span></span><span></span></div>
       <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a></div>
     </div>
   </section>
@@ -1102,6 +1133,18 @@
 
     var statsSection = document.querySelector('.stats');
     if (statsSection) statsObserver.observe(statsSection);
+
+    // Testimonial carousel dots
+    var testGrid = document.querySelector('.test-grid');
+    var dots = document.querySelectorAll('.test-dots-nav span');
+    if (testGrid && dots.length) {
+      testGrid.addEventListener('scroll', function() {
+        var scrollLeft = testGrid.scrollLeft;
+        var cardWidth = testGrid.querySelector('.test-card').offsetWidth + 16;
+        var idx = Math.round(scrollLeft / cardWidth);
+        dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+      }, { passive: true });
+    }
 
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function() {
