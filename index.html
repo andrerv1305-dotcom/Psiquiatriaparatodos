@@ -275,6 +275,7 @@
       gap: 24px;
     }
     .test-dots-nav { display: none; }
+    .how-dots-nav { display: none; }
     .test-card {
       background: var(--white);
       padding: 32px;
@@ -702,7 +703,38 @@
       /* Grids go single column */
       .pain-grid { grid-template-columns: 1fr; gap: 1px; }
       .diff-grid { grid-template-columns: 1fr; gap: 12px; }
-      .how-grid { grid-template-columns: 1fr; gap: 24px; }
+      /* How it works — horizontal carousel */
+      .how-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 16px;
+        padding-bottom: 8px;
+        scrollbar-width: none;
+      }
+      .how-grid::-webkit-scrollbar { display: none; }
+      .how-step {
+        min-width: 75vw;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        background: var(--white);
+        padding: 28px 24px;
+        border-radius: 4px;
+      }
+      .how-dots-nav {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .how-dots-nav span {
+        width: 8px; height: 8px;
+        border-radius: 50%;
+        background: var(--border);
+        transition: background 0.3s ease;
+      }
+      .how-dots-nav span.active { background: var(--wine); }
       .who-grid { grid-template-columns: 1fr; gap: 32px; }
 
       /* Cards — lighter padding on mobile */
@@ -995,6 +1027,7 @@
           <p>Lee a tu ritmo. Cada cap&iacute;tulo te acerca a entender lo que sientes.</p>
         </div>
       </div>
+      <div class="how-dots-nav"><span class="active"></span><span></span><span></span></div>
       <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a></div>
     </div>
   </section>
@@ -1143,6 +1176,18 @@
         var cardWidth = testGrid.querySelector('.test-card').offsetWidth + 16;
         var idx = Math.round(scrollLeft / cardWidth);
         dots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+      }, { passive: true });
+    }
+
+    // How-it-works carousel dots
+    var howGrid = document.querySelector('.how-grid');
+    var howDots = document.querySelectorAll('.how-dots-nav span');
+    if (howGrid && howDots.length) {
+      howGrid.addEventListener('scroll', function() {
+        var scrollLeft = howGrid.scrollLeft;
+        var cardWidth = howGrid.querySelector('.how-step').offsetWidth + 16;
+        var idx = Math.round(scrollLeft / cardWidth);
+        howDots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
       }, { passive: true });
     }
 
