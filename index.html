@@ -777,13 +777,16 @@
       .footer { padding: 24px 0 80px; }
       .footer .container { flex-direction: column; text-align: center; gap: 8px; }
 
-      /* Disable hover effects on touch */
+      /* Disable all hover/transform effects on touch */
       .test-card:hover,
       .diff-card:hover,
       .how-step:hover,
       .pricing-card:hover { transform: none; box-shadow: none; }
       .pain-card:hover { transform: none; border-left-width: 2px; background: var(--cream); }
       .how-step:hover .how-step-icon { background: transparent; color: var(--wine); border-color: var(--border); }
+      .hero-image:hover img,
+      .vp-image:hover img,
+      .author-photo:hover img { transform: none; }
 
       /* Simpler animations on mobile — less movement */
       .reveal { transform: translateY(20px); }
