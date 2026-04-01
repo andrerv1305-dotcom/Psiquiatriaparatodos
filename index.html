@@ -87,17 +87,71 @@
       border-radius: 4px;
       transition: background 0.2s ease, color 0.2s ease;
     }
-    .btn-primary { background: var(--wine); color: var(--white); }
+    .btn-primary {
+      background: var(--wine); color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute; top: 50%; left: 50%;
+      width: 0; height: 0;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s ease, height 0.5s ease;
+    }
     .btn-primary:hover { background: var(--wine-dark); }
+    .btn-primary:hover::after { width: 300px; height: 300px; }
     .btn-outline-white { background: transparent; border: 1px solid var(--white); color: var(--white); }
     .btn-outline-white:hover { background: var(--white); color: var(--navy); }
     .btn-block { width: 100%; }
 
-    /* Reveal */
-    .reveal { opacity: 0; transition: opacity 0.7s ease; }
-    .reveal.is-visible { opacity: 1; }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-d1 { transition-delay: 0.15s; }
+    .reveal-d2 { transition-delay: 0.3s; }
+    .reveal-d3 { transition-delay: 0.45s; }
+
+    /* Reveal from left */
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-left.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Reveal from right */
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-right.is-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Scale reveal for cards */
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .reveal-scale.is-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
 
     /* ===== NAV ===== */
     .nav {
@@ -144,7 +198,9 @@
       width: 100%; height: 100%;
       object-fit: cover; object-position: center top;
       display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+    .hero-image:hover img { transform: scale(1.03); }
 
     /* ===== SECTION 2 — SOCIAL PROOF BAR ===== */
     .stats {
@@ -186,6 +242,12 @@
       padding: 28px 32px;
       border-left: 2px solid var(--wine);
       text-align: left;
+      transition: transform 0.3s ease, border-left-width 0.3s ease, background 0.3s ease;
+    }
+    .pain-card:hover {
+      transform: translateX(4px);
+      border-left-width: 4px;
+      background: var(--white);
     }
     .pain-card h3 { font-size: 0.95rem; font-weight: 500; color: var(--text-primary); }
     .pain-card p { font-size: 0.9rem; color: var(--text-muted); margin-top: 6px; line-height: 1.6; }
@@ -213,6 +275,11 @@
       background: var(--white);
       padding: 32px;
       border-radius: 4px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .test-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
     }
     .test-dots { display: flex; gap: 4px; }
     .test-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--wine); }
@@ -253,7 +320,9 @@
       width: 100%; height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+    .vp-image:hover img { transform: scale(1.03); }
     .vp-badge {
       display: inline-block;
       font-size: 0.7rem; font-weight: 500;
@@ -289,7 +358,9 @@
       width: 100%; height: 100%;
       object-fit: cover; object-position: center top;
       display: block;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
+    .author-photo:hover img { transform: scale(1.03); }
     .author-content .label { margin-bottom: 12px; display: block; }
     .author-content h2 { margin-bottom: 4px; }
     .author-subtitle { font-size: 0.95rem; color: var(--wine); margin-top: 4px; }
@@ -325,6 +396,11 @@
       background: var(--cream);
       padding: 28px 24px;
       border-radius: 4px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .diff-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
     }
     .diff-num {
       font-family: 'Cormorant Garamond', serif;
@@ -346,6 +422,10 @@
       gap: 40px;
       text-align: center;
     }
+    .how-step {
+      transition: transform 0.35s ease;
+    }
+    .how-step:hover { transform: translateY(-4px); }
     .how-step-icon {
       width: 72px; height: 72px;
       border: 1px solid var(--border);
@@ -354,6 +434,12 @@
       display: flex; align-items: center; justify-content: center;
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.6rem; color: var(--wine);
+      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    .how-step:hover .how-step-icon {
+      background: var(--wine);
+      color: var(--white);
+      border-color: var(--wine);
     }
     .how-step h3 { margin-bottom: 8px; }
     .how-step p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
@@ -386,7 +472,18 @@
       padding: clamp(72px, 10vw, 120px) 0;
     }
     .faq-list { max-width: 680px; margin: 0 auto; }
-    .faq-list details { border-bottom: 1px solid var(--border); }
+    .faq-list details {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+    .faq-list details[open] {
+      background: var(--cream);
+      padding-left: 16px;
+      padding-right: 16px;
+      margin-left: -16px;
+      margin-right: -16px;
+      border-radius: 4px;
+    }
     .faq-list summary {
       list-style: none; cursor: pointer;
       display: flex; align-items: center; justify-content: space-between;
@@ -422,6 +519,11 @@
       border-radius: 4px;
       padding: 48px;
       text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.1);
     }
     .pricing-label {
       font-size: 0.72rem; font-weight: 500;
@@ -555,14 +657,14 @@
   <section class="hero">
     <div class="container">
       <div class="hero-grid">
-        <div class="hero-text reveal">
+        <div class="hero-text reveal-left">
           <span class="label">Dra. Vanessa Flores &middot; Psiquiatra</span>
           <h1>Llevas a&ntilde;os luchando contra tu propia mente sin saber por qu&eacute;</h1>
           <p class="hero-sub">La gu&iacute;a que explica lo que ninguna consulta tuvo tiempo de decirte. Escrita por una psiquiatra que ha acompa&ntilde;ado a cientos de adultos con TDA.</p>
           <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a>
           <p class="hero-trust">Pago seguro &middot; Descarga inmediata &middot; Garant&iacute;a 7 d&iacute;as</p>
         </div>
-        <div class="hero-image reveal reveal-d1"><img src="img/hero-foto.png" alt="Dra. Vanessa Flores, psiquiatra" width="530" height="663"></div>
+        <div class="hero-image reveal-right reveal-d1"><img src="img/hero-foto.png" alt="Dra. Vanessa Flores, psiquiatra" width="530" height="663"></div>
       </div>
     </div>
   </section>
@@ -626,9 +728,9 @@
   <!-- SECTION 5 — VALUE PROP #1 (image left, text right) -->
   <section class="value-prop bg-white">
     <div class="container">
-      <div class="vp-grid reveal">
-        <div class="vp-image"><img src="img/cerebro.png" alt="Ilustraci&oacute;n de cerebro con flores y mariposas" width="530" height="398"></div>
-        <div class="vp-text">
+      <div class="vp-grid">
+        <div class="vp-image reveal-left"><img src="img/cerebro.png" alt="Ilustraci&oacute;n de cerebro con flores y mariposas" width="530" height="398"></div>
+        <div class="vp-text reveal-right">
           <span class="label">Lo que descubrir&aacute;s</span>
           <h2>Por qu&eacute; tu cerebro funciona diferente</h2>
           <p>La explicaci&oacute;n real del TDA en adultos. Sin filtros, sin tecnicismos, sin hacerte sentir que algo est&aacute; mal contigo. Entender&aacute;s la ciencia detr&aacute;s de lo que sientes todos los d&iacute;as y por qu&eacute; las soluciones gen&eacute;ricas nunca te funcionaron.</p>
@@ -641,9 +743,9 @@
   <!-- SECTION 6 — VALUE PROP #2 (text left, image right — reversed) -->
   <section class="value-prop bg-cream">
     <div class="container">
-      <div class="vp-grid reverse reveal">
-        <div class="vp-image"><img src="img/consultorio.png" alt="Dra. Vanessa Flores en su consultorio" width="530" height="398"></div>
-        <div class="vp-text">
+      <div class="vp-grid reverse">
+        <div class="vp-image reveal-right"><img src="img/consultorio.png" alt="Dra. Vanessa Flores en su consultorio" width="530" height="398"></div>
+        <div class="vp-text reveal-left">
           <span class="vp-badge">Paso a paso</span>
           <span class="label">El patr&oacute;n oculto</span>
           <h2>El ciclo de compensaci&oacute;n que te agota</h2>
@@ -657,9 +759,9 @@
   <!-- SECTION 7 — VALUE PROP #3 (image left, text right) -->
   <section class="value-prop bg-white">
     <div class="container">
-      <div class="vp-grid reveal">
-        <div class="vp-image"><img src="img/conferencia.jpeg" alt="Dra. Vanessa Flores dando una conferencia" width="530" height="398"></div>
-        <div class="vp-text">
+      <div class="vp-grid">
+        <div class="vp-image reveal-left"><img src="img/conferencia.jpeg" alt="Dra. Vanessa Flores dando una conferencia" width="530" height="398"></div>
+        <div class="vp-text reveal-right">
           <span class="label">El primer paso</span>
           <h2>Qu&eacute; hacer con este conocimiento desde hoy</h2>
           <p>La gu&iacute;a no solo explica. Te da orientaci&oacute;n pr&aacute;ctica sobre pr&oacute;ximos pasos: cu&aacute;ndo buscar ayuda profesional, c&oacute;mo hablar de esto con tu entorno y qu&eacute; cambios peque&ntilde;os generan el mayor impacto.</p>
@@ -716,8 +818,8 @@
   <section class="author">
     <div class="container">
       <div class="author-grid">
-        <div class="author-photo reveal"><img src="img/headshot.png" alt="Dra. Vanessa Flores, retrato profesional" width="480" height="640"></div>
-        <div class="author-content reveal reveal-d1">
+        <div class="author-photo reveal-left"><img src="img/headshot.png" alt="Dra. Vanessa Flores, retrato profesional" width="480" height="640"></div>
+        <div class="author-content reveal-right reveal-d1">
           <span class="label">La autora</span>
           <h2>Dra. Vanessa Flores</h2>
           <p class="author-subtitle">Psiquiatra &middot; Especialista en salud mental</p>
@@ -811,7 +913,7 @@
       <div class="section-header">
         <h2>Tu gu&iacute;a, ahora mismo</h2>
       </div>
-      <div class="pricing-card reveal">
+      <div class="pricing-card reveal-scale">
         <p class="pricing-label">Acceso completo</p>
         <div>
           <span class="pricing-old">$47</span>
@@ -857,6 +959,47 @@
   </div>
 
   <script>
+    // Counter animation for stats
+    function animateCount(el, target, suffix) {
+      var start = 0;
+      var duration = 1500;
+      var startTime = null;
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    var statsObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var nums = entry.target.querySelectorAll('.stat-number');
+          nums.forEach(function(n) {
+            var text = n.textContent.trim();
+            if (text === '999+') animateCount(n, 999, '+');
+            else if (text === '4.9/5') {
+              var s = 0, dur = 1500, st = null;
+              (function run(ts) {
+                if (!st) st = ts;
+                var p = Math.min((ts - st) / dur, 1);
+                var e = 1 - Math.pow(1 - p, 3);
+                n.textContent = (e * 4.9).toFixed(1) + '/5';
+                if (p < 1) requestAnimationFrame(run);
+              })(performance.now());
+            }
+          });
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    var statsSection = document.querySelector('.stats');
+    if (statsSection) statsObserver.observe(statsSection);
+
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function() {
       nav.classList.toggle('scrolled', window.scrollY > 60);
@@ -871,7 +1014,7 @@
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.reveal').forEach(function(el) {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
       observer.observe(el);
     });
   </script>
