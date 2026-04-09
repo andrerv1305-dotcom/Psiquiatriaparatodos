@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía TDA en Adultos — Dra. Vanessa Flores</title>
-  <meta name="description" content="La guía definitiva sobre TDA en adultos, escrita por una psiquiatra certificada. Entiende tu mente y recupera el control.">
+  <title>Modo Calma — El protocolo de 5 d&iacute;as para regular tu sistema nervioso</title>
+  <meta name="description" content="Un protocolo cl&iacute;nico escrito por una psiquiatra con 16 a&ntilde;os de experiencia. Para mujeres que viven en alerta constante y ya no saben c&oacute;mo apagarlo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&display=swap">
@@ -810,15 +810,112 @@
       .stat-number { font-size: 1.3rem; }
       .stat-label { font-size: 0.68rem; }
     }
+
+    /* ===== BUTTERFLIES ===== */
+    .butterflies {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .butterfly {
+      position: absolute;
+      opacity: 0;
+      will-change: transform, opacity;
+    }
+    .butterfly svg { width: 100%; height: 100%; }
+
+    .bf-1 {
+      width: 28px; height: 28px;
+      animation: fly1 18s ease-in-out infinite;
+    }
+    .bf-2 {
+      width: 22px; height: 22px;
+      animation: fly2 22s ease-in-out infinite 3s;
+    }
+    .bf-3 {
+      width: 32px; height: 32px;
+      animation: fly3 25s ease-in-out infinite 7s;
+    }
+    .bf-4 {
+      width: 20px; height: 20px;
+      animation: fly4 20s ease-in-out infinite 11s;
+    }
+    .bf-5 {
+      width: 26px; height: 26px;
+      animation: fly5 23s ease-in-out infinite 5s;
+    }
+
+    @keyframes fly1 {
+      0%   { transform: translate(-5vw, 30vh) rotate(0deg); opacity: 0; }
+      8%   { opacity: 0.35; }
+      25%  { transform: translate(25vw, 18vh) rotate(15deg); }
+      50%  { transform: translate(55vw, 35vh) rotate(-10deg); opacity: 0.3; }
+      75%  { transform: translate(80vw, 15vh) rotate(20deg); }
+      92%  { opacity: 0.35; }
+      100% { transform: translate(105vw, 28vh) rotate(5deg); opacity: 0; }
+    }
+    @keyframes fly2 {
+      0%   { transform: translate(105vw, 60vh) rotate(0deg); opacity: 0; }
+      8%   { opacity: 0.25; }
+      25%  { transform: translate(75vw, 50vh) rotate(-12deg); }
+      50%  { transform: translate(40vw, 65vh) rotate(8deg); opacity: 0.2; }
+      75%  { transform: translate(15vw, 45vh) rotate(-15deg); }
+      92%  { opacity: 0.25; }
+      100% { transform: translate(-5vw, 55vh) rotate(-5deg); opacity: 0; }
+    }
+    @keyframes fly3 {
+      0%   { transform: translate(20vw, -5vh) rotate(5deg); opacity: 0; }
+      10%  { opacity: 0.2; }
+      30%  { transform: translate(35vw, 25vh) rotate(-8deg); }
+      50%  { transform: translate(60vw, 40vh) rotate(12deg); opacity: 0.18; }
+      70%  { transform: translate(45vw, 70vh) rotate(-5deg); }
+      90%  { opacity: 0.2; }
+      100% { transform: translate(30vw, 105vh) rotate(10deg); opacity: 0; }
+    }
+    @keyframes fly4 {
+      0%   { transform: translate(90vw, 80vh) rotate(-5deg); opacity: 0; }
+      10%  { opacity: 0.3; }
+      30%  { transform: translate(70vw, 60vh) rotate(10deg); }
+      50%  { transform: translate(50vw, 75vh) rotate(-8deg); opacity: 0.25; }
+      70%  { transform: translate(25vw, 55vh) rotate(15deg); }
+      90%  { opacity: 0.3; }
+      100% { transform: translate(-5vw, 70vh) rotate(0deg); opacity: 0; }
+    }
+    @keyframes fly5 {
+      0%   { transform: translate(-5vw, 85vh) rotate(8deg); opacity: 0; }
+      10%  { opacity: 0.22; }
+      30%  { transform: translate(30vw, 70vh) rotate(-10deg); }
+      50%  { transform: translate(55vw, 85vh) rotate(5deg); opacity: 0.18; }
+      70%  { transform: translate(75vw, 60vh) rotate(-12deg); }
+      90%  { opacity: 0.22; }
+      100% { transform: translate(105vw, 75vh) rotate(0deg); opacity: 0; }
+    }
+
+    @media (max-width: 767px) {
+      .bf-1, .bf-3, .bf-5 { width: 18px; height: 18px; }
+      .bf-2, .bf-4 { width: 14px; height: 14px; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- BUTTERFLIES -->
+  <div class="butterflies" aria-hidden="true">
+    <div class="butterfly bf-1"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#8C1F2E" opacity="0.7"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#8C1F2E" opacity="0.5"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#6B1522" opacity="0.6"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#6B1522" opacity="0.4"/></svg></div>
+    <div class="butterfly bf-2"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#F5EAEC" opacity="0.8"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#F5EAEC" opacity="0.6"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#DDD8D0" opacity="0.7"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#DDD8D0" opacity="0.5"/></svg></div>
+    <div class="butterfly bf-3"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#6B1522" opacity="0.5"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#6B1522" opacity="0.35"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#8C1F2E" opacity="0.4"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#8C1F2E" opacity="0.3"/></svg></div>
+    <div class="butterfly bf-4"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#F5EAEC" opacity="0.6"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#F5EAEC" opacity="0.45"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#8C1F2E" opacity="0.35"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#8C1F2E" opacity="0.25"/></svg></div>
+    <div class="butterfly bf-5"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#6B1522" opacity="0.6"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#6B1522" opacity="0.4"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#F5EAEC" opacity="0.5"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#F5EAEC" opacity="0.35"/></svg></div>
+  </div>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="container">
       <a href="#" class="nav-logo">Dra. Vanessa Flores</a>
-      <a href="#pricing" class="btn btn-primary">Obtener el ebook</a>
+      <a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a>
     </div>
   </nav>
 
@@ -828,12 +925,12 @@
       <div class="hero-grid">
         <div class="hero-text reveal-left">
           <span class="label">Dra. Vanessa Flores &middot; Psiquiatra</span>
-          <h1>Llevas a&ntilde;os luchando contra tu propia mente sin saber por qu&eacute;</h1>
-          <p class="hero-sub">La gu&iacute;a que explica lo que ninguna consulta tuvo tiempo de decirte. Escrita por una psiquiatra que ha acompa&ntilde;ado a cientos de adultos con TDA.</p>
+          <h1>Tu mente no para. Tu cuerpo tampoco descansa. Y no sabes c&oacute;mo apagarlo.</h1>
+          <p class="hero-sub">Modo Calma. El protocolo de 5 d&iacute;as para regular tu sistema nervioso. Escrito por una psiquiatra con 16 a&ntilde;os de experiencia cl&iacute;nica en Panam&aacute;.</p>
         </div>
         <div class="hero-image reveal-right reveal-d1"><img src="img/hero-foto.webp" alt="Dra. Vanessa Flores, psiquiatra" width="530" height="663" fetchpriority="high" decoding="async"></div>
         <div class="hero-cta-wrap">
-          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a>
+          <a href="#pricing" class="btn btn-primary">Obtener Modo Calma &mdash; $17</a>
           <p class="hero-trust">Pago seguro &middot; Descarga inmediata &middot; Garant&iacute;a 7 d&iacute;as</p>
         </div>
       </div>
@@ -843,8 +940,8 @@
   <!-- SECTION 2 — SOCIAL PROOF BAR -->
   <section class="stats">
     <div class="container">
-      <div class="stat"><div class="stat-number">999+</div><div class="stat-label">Pacientes</div></div>
-      <div class="stat"><div class="stat-number">4.9/5</div><div class="stat-label">Valoraci&oacute;n</div></div>
+      <div class="stat"><div class="stat-number">16+</div><div class="stat-label">A&ntilde;os de experiencia</div></div>
+      <div class="stat"><div class="stat-number">4.9</div><div class="stat-label">Valoraci&oacute;n</div></div>
       <div class="stat"><div class="stat-number">PDF</div><div class="stat-label">Descarga inmediata</div></div>
     </div>
   </section>
@@ -853,17 +950,17 @@
   <section class="pain-main">
     <div class="container">
       <h2 class="reveal">Si llegaste aqu&iacute;, probablemente esto te suena</h2>
-      <p class="reveal reveal-d1">Llevas a&ntilde;os sinti&eacute;ndote en desventaja sin entender por qu&eacute;. Nada de lo que intentas se mantiene. Y la culpa crece con cada nuevo intento fallido.</p>
+      <p class="reveal reveal-d1"></p>
       <div class="pain-grid">
-        <div class="pain-card reveal"><h3>Te esfuerzas m&aacute;s que todos</h3><p>Y aun as&iacute; sientes que siempre llegas tarde a todo.</p></div>
-        <div class="pain-card reveal reveal-d1"><h3>Tu mente no para, pero cuando necesitas enfocarte, desaparece</h3><p>El ciclo de hiperfoco y bloqueo que nadie explica.</p></div>
-        <div class="pain-card reveal"><h3>Por fuera todo parece bien. Por dentro, caos</h3><p>Has aprendido a enmascararlo tan bien que nadie lo nota.</p></div>
-        <div class="pain-card reveal reveal-d1"><h3>Llevas a&ntilde;os creyendo que eres el problema</h3><p>Demasiado intenso/a. Demasiado sensible. Demasiado todo.</p></div>
-        <div class="pain-card reveal"><h3>Empiezas cien cosas y terminas pocas</h3><p>Y la culpa que eso genera es peor que el caos.</p></div>
-        <div class="pain-card reveal reveal-d1"><h3>Ya lo intentaste todo y nada funciona</h3><p>Porque ninguna soluci&oacute;n fue dise&ntilde;ada para c&oacute;mo funciona tu mente.</p></div>
+        <div class="pain-card reveal"><h3>Est&aacute;s cansada aunque no hayas hecho nada</h3><p>Te despiertas agotada. Dormiste, pero tu cuerpo no descans&oacute;. Es como si nunca pudieras apagar el motor completamente.</p></div>
+        <div class="pain-card reveal reveal-d1"><h3>Tu mente va a mil aunque todo est&eacute; bien</h3><p>No hay una crisis real. Pero tu cabeza sigue analizando, anticipando, preocup&aacute;ndose. Sola, en silencio, sin que nadie lo note.</p></div>
+        <div class="pain-card reveal"><h3>Vives en alerta constante sin entender por qu&eacute;</h3><p>Un mensaje, un tono de voz, un cambio de planes y tu cuerpo reacciona como si fuera una amenaza. T&uacute; misma no lo entiendes.</p></div>
+        <div class="pain-card reveal reveal-d1"><h3>Te cuesta relajarte sin sentir culpa</h3><p>Cuando por fin paras, aparece la angustia. Como si descansar fuera peligroso. Como si algo malo fuera a pasar si bajas la guardia.</p></div>
+        <div class="pain-card reveal"><h3>Llevas a&ntilde;os aguantando y ya no puedes m&aacute;s</h3><p>Lo has manejado sola. Has aguantado, has seguido. Pero el cuerpo siempre cobra lo que la mente niega.</p></div>
+        <div class="pain-card reveal reveal-d1"><h3>Ya intentaste de todo y nada se mantiene</h3><p>Meditaci&oacute;n, tips de internet, respirar profundo. Funciona cinco minutos. Luego vuelve todo igual.</p></div>
       </div>
-      <p class="pain-closing reveal">&ldquo;No est&aacute;s roto/a. Nadie te hab&iacute;a dado las herramientas correctas.&rdquo;</p>
-      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Quiero entender mi mente</a></div>
+      <p class="pain-closing reveal">&ldquo;No est&aacute;s exagerando. Tu sistema nervioso lleva demasiado tiempo sin recibir la se&ntilde;al de que el peligro ya pas&oacute;.&rdquo;</p>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Quiero activar mi Modo Calma</a></div>
     </div>
   </section>
 
@@ -872,28 +969,28 @@
     <div class="container">
       <div class="section-header">
         <span class="label">Lo que dicen</span>
-        <h2>Personas que ya leyeron la gu&iacute;a</h2>
-        <p>Lo que pas&oacute; cuando finalmente entendieron c&oacute;mo funciona su mente.</p>
+        <h2>Lo que dicen quienes ya lo hicieron</h2>
+        <p>Historias reales de mujeres que activaron su Modo Calma.</p>
       </div>
       <div class="test-grid">
         <div class="test-card reveal">
           <div class="test-dots"><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span></div>
-          <p class="test-quote">&ldquo;Treinta y cuatro a&ntilde;os pensando que el problema era yo. Este libro fue la primera vez que alguien lo explic&oacute; de forma que me lleg&oacute;.&rdquo;</p>
-          <p class="test-attr">M.G., Panam&aacute;</p>
+          <p class="test-quote">&ldquo;Pens&eacute; que as&iacute; era yo. Que simplemente era nerviosa. En el d&iacute;a 2 entend&iacute; que llevaba a&ntilde;os en modo supervivencia.&rdquo;</p>
+          <p class="test-attr">M.R., Panam&aacute;</p>
         </div>
         <div class="test-card reveal reveal-d1">
           <div class="test-dots"><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span></div>
-          <p class="test-quote">&ldquo;Lo le&iacute; en una tarde. Cambi&oacute; la forma en que me veo a m&iacute; misma.&rdquo;</p>
-          <p class="test-attr">S.R., Colombia</p>
+          <p class="test-quote">&ldquo;Lo hice en cinco d&iacute;as como dice. El cambio que m&aacute;s not&eacute; fue que por primera vez pude descansar sin sentir culpa.&rdquo;</p>
+          <p class="test-attr">C.V., 41 a&ntilde;os</p>
         </div>
         <div class="test-card reveal reveal-d2">
           <div class="test-dots"><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span></div>
-          <p class="test-quote">&ldquo;Por fin algo que habla de esto sin hacerte sentir raro o da&ntilde;ado.&rdquo;</p>
-          <p class="test-attr">C.V., 38 a&ntilde;os</p>
+          <p class="test-quote">&ldquo;Por fin algo escrito por alguien que realmente sabe. No tips de Instagram. Ciencia explicada de verdad.&rdquo;</p>
+          <p class="test-attr">L.M., Colombia</p>
         </div>
       </div>
       <div class="test-dots-nav"><span class="active"></span><span></span><span></span></div>
-      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a></div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a></div>
     </div>
   </section>
 
@@ -903,10 +1000,10 @@
       <div class="vp-grid">
         <div class="vp-image reveal-left"><img src="img/cerebro.webp" loading="lazy" decoding="async" alt="Ilustraci&oacute;n de cerebro con flores y mariposas" width="530" height="398"></div>
         <div class="vp-text reveal-right">
-          <span class="label">Lo que descubrir&aacute;s</span>
-          <h2>Por qu&eacute; tu cerebro funciona diferente</h2>
-          <p>La explicaci&oacute;n real del TDA en adultos. Sin filtros, sin tecnicismos, sin hacerte sentir que algo est&aacute; mal contigo. Entender&aacute;s la ciencia detr&aacute;s de lo que sientes todos los d&iacute;as y por qu&eacute; las soluciones gen&eacute;ricas nunca te funcionaron.</p>
-          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a>
+          <span class="label">Qu&eacute; es Modo Calma</span>
+          <h2>No es un libro de autoayuda. Es un protocolo cl&iacute;nico.</h2>
+          <p>Modo Calma no te da informaci&oacute;n para leer y olvidar. Te da un sistema de 5 d&iacute;as, el mismo tipo de herramientas que uso con mis pacientes en consulta, para que tu sistema nervioso aprenda a regularse de verdad. Cada d&iacute;a tiene una pr&aacute;ctica espec&iacute;fica, la explicaci&oacute;n de por qu&eacute; funciona neurol&oacute;gicamente, y un resultado concreto.</p>
+          <a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a>
         </div>
       </div>
     </div>
@@ -920,9 +1017,9 @@
         <div class="vp-text reveal-left">
           <span class="vp-badge">Paso a paso</span>
           <span class="label">El patr&oacute;n oculto</span>
-          <h2>El ciclo de compensaci&oacute;n que te agota</h2>
-          <p>Por qu&eacute; das el 200% y a&uacute;n sientes que no alcanzas. La gu&iacute;a te muestra el mecanismo invisible que mantiene a miles de adultos con TDA atrapados en un loop de esfuerzo, agotamiento y culpa. Y c&oacute;mo empezar a salir de &eacute;l.</p>
-          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a>
+          <h2>El ciclo de alerta que nunca se apaga</h2>
+          <p>Tu sistema nervioso aprendi&oacute; a mantenerse en guardia. No porque seas ansiosa por naturaleza, sino porque en alg&uacute;n punto esa alerta fue necesaria. El problema es que nunca recibi&oacute; la se&ntilde;al de que pod&iacute;a descansar. Modo Calma te muestra el mecanismo exacto y c&oacute;mo empezar a salir de &eacute;l.</p>
+          <a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a>
         </div>
       </div>
     </div>
@@ -936,8 +1033,8 @@
         <div class="vp-text reveal-right">
           <span class="label">El primer paso</span>
           <h2>Qu&eacute; hacer con este conocimiento desde hoy</h2>
-          <p>La gu&iacute;a no solo explica. Te da orientaci&oacute;n pr&aacute;ctica sobre pr&oacute;ximos pasos: cu&aacute;ndo buscar ayuda profesional, c&oacute;mo hablar de esto con tu entorno y qu&eacute; cambios peque&ntilde;os generan el mayor impacto.</p>
-          <a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a>
+          <p>El protocolo no solo explica. Te da orientaci&oacute;n pr&aacute;ctica desde el primer d&iacute;a. Cu&aacute;ndo buscar ayuda profesional, c&oacute;mo hablar de esto con tu entorno y qu&eacute; cambios peque&ntilde;os generan el mayor impacto en tu sistema nervioso.</p>
+          <a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a>
         </div>
       </div>
     </div>
@@ -947,42 +1044,42 @@
   <section class="diff">
     <div class="container">
       <div class="section-header">
-        <h2>Lo que hace diferente a esta gu&iacute;a</h2>
-        <p>No es un art&iacute;culo m&aacute;s de internet. Es informaci&oacute;n cl&iacute;nica real, escrita con empat&iacute;a.</p>
+        <h2>Lo que hace diferente a este protocolo</h2>
+        <p>No es un art&iacute;culo m&aacute;s de internet. Es un sistema cl&iacute;nico real.</p>
       </div>
       <div class="diff-grid">
         <div class="diff-card reveal">
           <div class="diff-num">01</div>
-          <h3>Escrita por una psiquiatra activa</h3>
-          <p>No es teor&iacute;a. Es experiencia cl&iacute;nica real con pacientes reales.</p>
+          <h3>Escrita por una psiquiatra activa, no una coach sin credenciales</h3>
+          <p></p>
         </div>
         <div class="diff-card reveal reveal-d1">
           <div class="diff-num">02</div>
-          <h3>Lenguaje claro, sin jerga</h3>
-          <p>Explicaciones que cualquier persona puede entender y aplicar.</p>
+          <h3>Basada en neurociencia real, explicada en lenguaje humano</h3>
+          <p></p>
         </div>
         <div class="diff-card reveal reveal-d2">
           <div class="diff-num">03</div>
-          <h3>Enfocada en adultos</h3>
-          <p>El TDA en adultos se vive diferente. Esta gu&iacute;a lo reconoce.</p>
+          <h3>5 d&iacute;as con pr&aacute;ctica concreta, no cap&iacute;tulos para leer y guardar</h3>
+          <p></p>
         </div>
         <div class="diff-card reveal">
           <div class="diff-num">04</div>
-          <h3>Aborda ansiedad y agotamiento</h3>
-          <p>La conexi&oacute;n entre TDA, ansiedad cr&oacute;nica y burnout explicada.</p>
+          <h3>Dise&ntilde;ada para mujeres que ya lo intentaron todo</h3>
+          <p></p>
         </div>
         <div class="diff-card reveal reveal-d1">
           <div class="diff-num">05</div>
-          <h3>Con orientaci&oacute;n pr&aacute;ctica</h3>
-          <p>Cada secci&oacute;n incluye pr&oacute;ximos pasos concretos y aplicables.</p>
+          <h3>Incluye la explicaci&oacute;n cl&iacute;nica de por qu&eacute; funciona cada pr&aacute;ctica</h3>
+          <p></p>
         </div>
         <div class="diff-card reveal reveal-d2">
           <div class="diff-num">06</div>
-          <h3>Sin estigma, sin juicio</h3>
-          <p>Escrita desde la empat&iacute;a. Para entenderte, no para etiquetarte.</p>
+          <h3>Sin estigma, sin juicio, desde la experiencia real con pacientes</h3>
+          <p></p>
         </div>
       </div>
-      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a></div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a></div>
     </div>
   </section>
 
@@ -994,18 +1091,18 @@
         <div class="author-content reveal-right reveal-d1">
           <span class="label">La autora</span>
           <h2>Dra. Vanessa Flores</h2>
-          <p class="author-subtitle">Psiquiatra &middot; Especialista en salud mental</p>
+          <p class="author-subtitle">Psiquiatra &middot; Especialista en Salud Mental &middot; Universidad de Panam&aacute;</p>
           <hr class="author-divider">
-          <p class="author-bio">Con m&aacute;s de 15 a&ntilde;os ejerciendo la psiquiatr&iacute;a, la Dra. Flores ha acompa&ntilde;ado a cientos de personas adultas que llegaron a su consulta sinti&eacute;ndose agotadas y sin entender por qu&eacute;. El patr&oacute;n que encontr&oacute; en muchos de esos casos la llev&oacute; a escribir esta gu&iacute;a.</p>
+          <p class="author-bio">Con m&aacute;s de 16 a&ntilde;os ejerciendo la psiquiatr&iacute;a, he acompa&ntilde;ado a cientos de mujeres que llegaron a mi consulta sinti&eacute;ndose agotadas, en alerta constante, y sin entender por qu&eacute;. Lo que encontr&eacute; en la mayor&iacute;a de esos casos no era debilidad. Era un sistema nervioso que nunca aprendi&oacute; a descansar. Escrib&iacute; este protocolo para darte lo que normalmente solo ocurre dentro de una consulta privada.</p>
           <div class="cred-tags">
             <span class="cred-tag">M&eacute;dico Psiquiatra</span>
             <span class="cred-tag">Universidad de Panam&aacute;</span>
-            <span class="cred-tag">+15 a&ntilde;os</span>
+            <span class="cred-tag">+16 a&ntilde;os</span>
           </div>
-          <div class="author-pullquote">&ldquo;Escrib&iacute; esta gu&iacute;a porque el TDA en adultos est&aacute; siendo ignorado. Mis pacientes merec&iacute;an esta informaci&oacute;n antes de llegar a la consulta, no despu&eacute;s.&rdquo;</div>
+          <div class="author-pullquote">&ldquo;La calma no es un estado de &aacute;nimo. Es una habilidad. Y se puede aprender.&rdquo;</div>
         </div>
       </div>
-      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a></div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a></div>
     </div>
   </section>
 
@@ -1019,8 +1116,8 @@
       <div class="how-grid">
         <div class="how-step reveal">
           <div class="how-step-icon">1</div>
-          <h3>Compra la gu&iacute;a</h3>
-          <p>Pago seguro con tarjeta. Proceso en menos de 2 minutos.</p>
+          <h3>Compra el protocolo</h3>
+          <p>Pago seguro con PayPal en menos de 2 minutos.</p>
         </div>
         <div class="how-step reveal reveal-d1">
           <div class="how-step-icon">2</div>
@@ -1029,12 +1126,12 @@
         </div>
         <div class="how-step reveal reveal-d2">
           <div class="how-step-icon">3</div>
-          <h3>Entiende tu mente</h3>
-          <p>Lee a tu ritmo. Cada cap&iacute;tulo te acerca a entender lo que sientes.</p>
+          <h3>Sigue el protocolo</h3>
+          <p>Un d&iacute;a a la vez, a tu ritmo, desde donde est&aacute;s.</p>
         </div>
       </div>
       <div class="how-dots-nav"><span class="active"></span><span></span><span></span></div>
-      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener la gu&iacute;a</a></div>
+      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a></div>
     </div>
   </section>
 
@@ -1043,7 +1140,7 @@
     <div class="container">
       <div class="sp2-quote reveal">
         <div class="test-dots" style="justify-content:center; margin-bottom: 20px;"><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span><span class="test-dot"></span></div>
-        <blockquote>&ldquo;Pens&eacute; que era floja toda la vida. Esta gu&iacute;a me hizo entender que mi cerebro simplemente funciona diferente. Fue un alivio enorme.&rdquo;</blockquote>
+        <blockquote>&ldquo;Pens&eacute; que era ansiosa de car&aacute;cter. Modo Calma me hizo entender que mi sistema nervioso simplemente nunca aprendi&oacute; a descansar. Fue un alivio enorme.&rdquo;</blockquote>
         <cite>L.M., 36 a&ntilde;os &middot; M&eacute;xico</cite>
       </div>
     </div>
@@ -1057,24 +1154,28 @@
       </div>
       <div class="faq-list reveal">
         <details>
-          <summary><span>Necesito tener un diagn&oacute;stico para leer esto?</span><span class="chevron"></span></summary>
-          <div class="faq-body">No. Est&aacute; escrita para cualquier persona que se identifique con los s&iacute;ntomas, con o sin diagn&oacute;stico formal.</div>
+          <summary><span>Necesito un diagn&oacute;stico de ansiedad para esto?</span><span class="chevron"></span></summary>
+          <div class="faq-body">No. Est&aacute; dise&ntilde;ado para cualquier persona que se identifique con los s&iacute;ntomas, con o sin diagn&oacute;stico formal.</div>
         </details>
         <details>
           <summary><span>Reemplaza una consulta psiqui&aacute;trica?</span><span class="chevron"></span></summary>
-          <div class="faq-body">No. Es una herramienta de comprensi&oacute;n y orientaci&oacute;n. La gu&iacute;a incluye claridad sobre cu&aacute;ndo buscar ayuda profesional.</div>
+          <div class="faq-body">No. Es una herramienta de regulaci&oacute;n y comprensi&oacute;n. El protocolo incluye orientaci&oacute;n clara sobre cu&aacute;ndo buscar ayuda profesional.</div>
         </details>
         <details>
           <summary><span>En qu&eacute; formato lo recibo?</span><span class="chevron"></span></summary>
-          <div class="faq-body">PDF de descarga inmediata. Compatible con cualquier dispositivo.</div>
+          <div class="faq-body">PDF de descarga inmediata. Compatible con cualquier dispositivo, tel&eacute;fono o computadora.</div>
         </details>
         <details>
-          <summary><span>Funciona si tengo TDA y tambi&eacute;n ansiedad?</span><span class="chevron"></span></summary>
-          <div class="faq-body">S&iacute;. La gu&iacute;a aborda espec&iacute;ficamente c&oacute;mo TDA, ansiedad y agotamiento cr&oacute;nico se entrelazan en adultos.</div>
+          <summary><span>Funciona si tengo ansiedad cr&oacute;nica hace a&ntilde;os?</span><span class="chevron"></span></summary>
+          <div class="faq-body">S&iacute;. Est&aacute; dise&ntilde;ado espec&iacute;ficamente para personas que llevan mucho tiempo en ese estado y ya intentaron otras soluciones sin resultado sostenido.</div>
         </details>
         <details>
           <summary><span>Qu&eacute; pasa si no me sirve?</span><span class="chevron"></span></summary>
-          <div class="faq-body">Tienes 7 d&iacute;as de garant&iacute;a de devoluci&oacute;n total. Sin preguntas.</div>
+          <div class="faq-body">Tienes 7 d&iacute;as de garant&iacute;a de devoluci&oacute;n completa. Sin preguntas.</div>
+        </details>
+        <details>
+          <summary><span>En cu&aacute;nto tiempo veo resultados?</span><span class="chevron"></span></summary>
+          <div class="faq-body">El protocolo es de 5 d&iacute;as. La mayor&iacute;a de las personas reporta cambios notables desde el d&iacute;a 2.</div>
         </details>
       </div>
     </div>
@@ -1084,25 +1185,25 @@
   <section class="pricing" id="pricing">
     <div class="container">
       <div class="section-header">
-        <h2>Tu gu&iacute;a, ahora mismo</h2>
+        <h2>Tu protocolo, ahora mismo</h2>
       </div>
       <div class="pricing-card reveal-scale">
         <p class="pricing-label">Acceso completo</p>
         <div>
-          <span class="pricing-old">$47</span>
-          <span class="pricing-current">$24</span>
+          <span class="pricing-old">$97</span>
+          <span class="pricing-current">$17</span>
         </div>
         <p class="pricing-desc">USD &middot; Pago &uacute;nico &middot; Sin suscripci&oacute;n</p>
         <hr class="pricing-divider">
         <ul class="pricing-list">
-          <li><span class="check-icon"></span>Gu&iacute;a completa en PDF, descarga inmediata</li>
-          <li><span class="check-icon"></span>Lenguaje accesible, sin jerga m&eacute;dica</li>
-          <li><span class="check-icon"></span>Escrita por una psiquiatra con pr&aacute;ctica cl&iacute;nica activa</li>
-          <li><span class="check-icon"></span>Orientaci&oacute;n de pr&oacute;ximos pasos al final de cada secci&oacute;n</li>
+          <li><span class="check-icon"></span>Protocolo completo de 5 d&iacute;as en PDF</li>
+          <li><span class="check-icon"></span>Explicaci&oacute;n cl&iacute;nica de por qu&eacute; funciona cada pr&aacute;ctica</li>
+          <li><span class="check-icon"></span>Bonus: Las 7 frases que uso con mis pacientes en crisis</li>
+          <li><span class="check-icon"></span>Escrito por una psiquiatra con 16 a&ntilde;os de experiencia</li>
           <li><span class="check-icon"></span>Garant&iacute;a de devoluci&oacute;n completa, 7 d&iacute;as sin preguntas</li>
         </ul>
-        <a href="#" class="btn btn-primary btn-block">Obtener la gu&iacute;a ahora</a>
-        <p class="pricing-secure">Pago seguro &middot; Acceso en menos de 2 minutos</p>
+        <a href="#" class="btn btn-primary btn-block">Obtener Modo Calma &mdash; $17</a>
+        <p class="pricing-secure">Pago seguro con PayPal &middot; Acceso en menos de 2 minutos</p>
       </div>
     </div>
   </section>
@@ -1110,9 +1211,9 @@
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
-      <h2 class="reveal">Cu&aacute;nto tiempo m&aacute;s cargando algo que tiene nombre y soluci&oacute;n?</h2>
-      <p class="final-cta-sub reveal reveal-d1">Esta gu&iacute;a puede ser el punto de partida que necesitabas.</p>
-      <a href="#pricing" class="btn btn-outline-white reveal reveal-d1">Quiero entender mi mente</a>
+      <h2 class="reveal">Cu&aacute;nto tiempo m&aacute;s viviendo en alerta como si fuera normal?</h2>
+      <p class="final-cta-sub reveal reveal-d1">Tu sistema nervioso puede aprender a descansar. Modo Calma es el primer paso.</p>
+      <a href="#pricing" class="btn btn-outline-white reveal reveal-d1">Quiero activar mi Modo Calma</a>
       <p class="final-cta-note reveal reveal-d2">Acceso inmediato</p>
     </div>
   </section>
@@ -1128,7 +1229,7 @@
 
   <!-- STICKY MOBILE BAR -->
   <div class="sticky-bar">
-    <a href="#pricing">Obtener la gu&iacute;a</a>
+    <a href="#pricing">Obtener Modo Calma</a>
   </div>
 
   <script>
@@ -1153,7 +1254,17 @@
           var nums = entry.target.querySelectorAll('.stat-number');
           nums.forEach(function(n) {
             var text = n.textContent.trim();
-            if (text === '999+') animateCount(n, 999, '+');
+            if (text === '16+') animateCount(n, 16, '+');
+            else if (text === '4.9') {
+              var s = 0, dur = 1500, st = null;
+              (function run(ts) {
+                if (!st) st = ts;
+                var p = Math.min((ts - st) / dur, 1);
+                var e = 1 - Math.pow(1 - p, 3);
+                n.textContent = (e * 4.9).toFixed(1);
+                if (p < 1) requestAnimationFrame(run);
+              })(performance.now());
+            }
             else if (text === '4.9/5') {
               var s = 0, dur = 1500, st = null;
               (function run(ts) {
