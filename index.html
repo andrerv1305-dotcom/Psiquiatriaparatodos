@@ -345,6 +345,41 @@
       margin-bottom: 28px;
     }
 
+    /* ===== PROTOCOL DAYS ===== */
+    .protocol-days {
+      margin: 28px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .protocol-day {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 20px;
+      background: var(--cream);
+      border-left: 2px solid var(--wine);
+    }
+    .protocol-day.protocol-bonus {
+      background: var(--wine-muted);
+      border-left-color: var(--wine-dark);
+    }
+    .day-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--wine);
+      min-width: 48px;
+      flex-shrink: 0;
+    }
+    .day-text {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
     /* ===== SECTION 8 — AUTHOR / SOCIAL PROOF ===== */
     .author {
       background: var(--cream);
@@ -894,9 +929,83 @@
       100% { transform: translate(105vw, 75vh) rotate(0deg); opacity: 0; }
     }
 
+    .bf-6 { width: 18px; height: 18px; animation: fly6 19s ease-in-out infinite 2s; }
+    .bf-7 { width: 24px; height: 24px; animation: fly7 26s ease-in-out infinite 9s; }
+    .bf-8 { width: 16px; height: 16px; animation: fly8 21s ease-in-out infinite 4s; }
+    .bf-9 { width: 30px; height: 30px; animation: fly9 24s ease-in-out infinite 13s; }
+    .bf-10 { width: 20px; height: 20px; animation: fly10 17s ease-in-out infinite 6s; }
+    .bf-11 { width: 14px; height: 14px; animation: fly11 28s ease-in-out infinite 1s; }
+    .bf-12 { width: 22px; height: 22px; animation: fly12 20s ease-in-out infinite 8s; }
+    .bf-13 { width: 17px; height: 17px; animation: fly13 23s ease-in-out infinite 15s; }
+    .bf-14 { width: 26px; height: 26px; animation: fly14 27s ease-in-out infinite 10s; }
+    .bf-15 { width: 19px; height: 19px; animation: fly15 22s ease-in-out infinite 12s; }
+
+    @keyframes fly6 {
+      0%   { transform: translate(50vw, -5vh) rotate(5deg); opacity: 0; }
+      10%  { opacity: 0.2; }
+      50%  { transform: translate(30vw, 50vh) rotate(-15deg); opacity: 0.18; }
+      100% { transform: translate(10vw, 105vh) rotate(8deg); opacity: 0; }
+    }
+    @keyframes fly7 {
+      0%   { transform: translate(105vw, 40vh) rotate(-8deg); opacity: 0; }
+      10%  { opacity: 0.15; }
+      50%  { transform: translate(50vw, 20vh) rotate(12deg); opacity: 0.12; }
+      100% { transform: translate(-5vw, 35vh) rotate(-5deg); opacity: 0; }
+    }
+    @keyframes fly8 {
+      0%   { transform: translate(-5vw, 70vh) rotate(10deg); opacity: 0; }
+      10%  { opacity: 0.25; }
+      50%  { transform: translate(45vw, 55vh) rotate(-8deg); opacity: 0.2; }
+      100% { transform: translate(105vw, 40vh) rotate(5deg); opacity: 0; }
+    }
+    @keyframes fly9 {
+      0%   { transform: translate(80vw, -5vh) rotate(-5deg); opacity: 0; }
+      10%  { opacity: 0.12; }
+      50%  { transform: translate(60vw, 45vh) rotate(10deg); opacity: 0.1; }
+      100% { transform: translate(40vw, 105vh) rotate(-8deg); opacity: 0; }
+    }
+    @keyframes fly10 {
+      0%   { transform: translate(105vw, 85vh) rotate(8deg); opacity: 0; }
+      10%  { opacity: 0.22; }
+      50%  { transform: translate(55vw, 70vh) rotate(-12deg); opacity: 0.18; }
+      100% { transform: translate(-5vw, 60vh) rotate(5deg); opacity: 0; }
+    }
+    @keyframes fly11 {
+      0%   { transform: translate(15vw, 105vh) rotate(-10deg); opacity: 0; }
+      10%  { opacity: 0.18; }
+      50%  { transform: translate(35vw, 50vh) rotate(8deg); opacity: 0.15; }
+      100% { transform: translate(55vw, -5vh) rotate(-5deg); opacity: 0; }
+    }
+    @keyframes fly12 {
+      0%   { transform: translate(-5vw, 15vh) rotate(5deg); opacity: 0; }
+      10%  { opacity: 0.2; }
+      50%  { transform: translate(40vw, 30vh) rotate(-10deg); opacity: 0.16; }
+      100% { transform: translate(105vw, 20vh) rotate(8deg); opacity: 0; }
+    }
+    @keyframes fly13 {
+      0%   { transform: translate(70vw, 105vh) rotate(-5deg); opacity: 0; }
+      10%  { opacity: 0.15; }
+      50%  { transform: translate(85vw, 55vh) rotate(12deg); opacity: 0.12; }
+      100% { transform: translate(95vw, -5vh) rotate(-8deg); opacity: 0; }
+    }
+    @keyframes fly14 {
+      0%   { transform: translate(105vw, 20vh) rotate(10deg); opacity: 0; }
+      10%  { opacity: 0.14; }
+      50%  { transform: translate(65vw, 40vh) rotate(-8deg); opacity: 0.1; }
+      100% { transform: translate(20vw, 65vh) rotate(5deg); opacity: 0; }
+    }
+    @keyframes fly15 {
+      0%   { transform: translate(30vw, -5vh) rotate(-12deg); opacity: 0; }
+      10%  { opacity: 0.2; }
+      50%  { transform: translate(15vw, 40vh) rotate(8deg); opacity: 0.16; }
+      100% { transform: translate(-5vw, 90vh) rotate(-5deg); opacity: 0; }
+    }
+
     @media (max-width: 767px) {
       .bf-1, .bf-3, .bf-5 { width: 18px; height: 18px; }
       .bf-2, .bf-4 { width: 14px; height: 14px; }
+      .bf-6, .bf-8, .bf-10, .bf-11, .bf-13, .bf-15 { width: 12px; height: 12px; }
+      .bf-7, .bf-9, .bf-12, .bf-14 { width: 16px; height: 16px; }
     }
   </style>
 </head>
@@ -909,6 +1018,16 @@
     <div class="butterfly bf-3"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#6B1522" opacity="0.5"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#6B1522" opacity="0.35"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#8C1F2E" opacity="0.4"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#8C1F2E" opacity="0.3"/></svg></div>
     <div class="butterfly bf-4"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#F5EAEC" opacity="0.6"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#F5EAEC" opacity="0.45"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#8C1F2E" opacity="0.35"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#8C1F2E" opacity="0.25"/></svg></div>
     <div class="butterfly bf-5"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#6B1522" opacity="0.6"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#6B1522" opacity="0.4"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#F5EAEC" opacity="0.5"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#F5EAEC" opacity="0.35"/></svg></div>
+    <div class="butterfly bf-6"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#8C1F2E" opacity="0.5"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#8C1F2E" opacity="0.35"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#F5EAEC" opacity="0.4"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#F5EAEC" opacity="0.3"/></svg></div>
+    <div class="butterfly bf-7"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#6B1522" opacity="0.4"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#6B1522" opacity="0.3"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#8C1F2E" opacity="0.35"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#8C1F2E" opacity="0.25"/></svg></div>
+    <div class="butterfly bf-8"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#F5EAEC" opacity="0.7"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#F5EAEC" opacity="0.5"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#DDD8D0" opacity="0.5"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#DDD8D0" opacity="0.35"/></svg></div>
+    <div class="butterfly bf-9"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#8C1F2E" opacity="0.35"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#8C1F2E" opacity="0.25"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#6B1522" opacity="0.3"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#6B1522" opacity="0.2"/></svg></div>
+    <div class="butterfly bf-10"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#F5EAEC" opacity="0.55"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#F5EAEC" opacity="0.4"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#8C1F2E" opacity="0.3"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#8C1F2E" opacity="0.2"/></svg></div>
+    <div class="butterfly bf-11"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#6B1522" opacity="0.45"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#6B1522" opacity="0.3"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#F5EAEC" opacity="0.4"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#F5EAEC" opacity="0.25"/></svg></div>
+    <div class="butterfly bf-12"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#8C1F2E" opacity="0.6"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#8C1F2E" opacity="0.4"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#DDD8D0" opacity="0.45"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#DDD8D0" opacity="0.3"/></svg></div>
+    <div class="butterfly bf-13"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#F5EAEC" opacity="0.5"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#F5EAEC" opacity="0.35"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#6B1522" opacity="0.4"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#6B1522" opacity="0.25"/></svg></div>
+    <div class="butterfly bf-14"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#8C1F2E" opacity="0.4"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#8C1F2E" opacity="0.3"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#F5EAEC" opacity="0.35"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#F5EAEC" opacity="0.2"/></svg></div>
+    <div class="butterfly bf-15"><svg viewBox="0 0 32 32" fill="none"><path d="M16 16C12 10 4 6 2 10s6 10 14 6z" fill="#6B1522" opacity="0.55"/><path d="M16 16C20 10 28 6 30 10s-6 10-14 6z" fill="#6B1522" opacity="0.35"/><path d="M16 16C12 22 4 26 2 22s6-10 14-6z" fill="#8C1F2E" opacity="0.45"/><path d="M16 16C20 22 28 26 30 22s-6-10-14-6z" fill="#8C1F2E" opacity="0.3"/></svg></div>
   </div>
 
   <!-- NAV -->
@@ -1003,85 +1122,21 @@
           <span class="label">Qu&eacute; es Modo Calma</span>
           <h2>No es un libro de autoayuda. Es un protocolo cl&iacute;nico.</h2>
           <p>Modo Calma no te da informaci&oacute;n para leer y olvidar. Te da un sistema de 5 d&iacute;as, el mismo tipo de herramientas que uso con mis pacientes en consulta, para que tu sistema nervioso aprenda a regularse de verdad. Cada d&iacute;a tiene una pr&aacute;ctica espec&iacute;fica, la explicaci&oacute;n de por qu&eacute; funciona neurol&oacute;gicamente, y un resultado concreto.</p>
+          <div class="protocol-days">
+            <div class="protocol-day reveal"><span class="day-label">D&iacute;a 0</span><span class="day-text">Por qu&eacute; tu sistema nervioso est&aacute; atascado y no es tu culpa</span></div>
+            <div class="protocol-day reveal"><span class="day-label">D&iacute;a 1</span><span class="day-text">Regulaci&oacute;n respiratoria. La t&eacute;cnica que uso con pacientes en crisis</span></div>
+            <div class="protocol-day reveal"><span class="day-label">D&iacute;a 2</span><span class="day-text">C&oacute;mo interrumpir el ciclo de pensamiento en 3 minutos</span></div>
+            <div class="protocol-day reveal"><span class="day-label">D&iacute;a 3</span><span class="day-text">Tu cuerpo como se&ntilde;al. Aprende a leerlo antes de que escale</span></div>
+            <div class="protocol-day reveal"><span class="day-label">D&iacute;a 4</span><span class="day-text">Los 4 h&aacute;bitos que sostienen la calma sin esfuerzo</span></div>
+            <div class="protocol-day reveal"><span class="day-label">D&iacute;a 5</span><span class="day-text">Tu protocolo personalizado para mantener la calma sin depender de nadie</span></div>
+            <div class="protocol-day protocol-bonus reveal"><span class="day-label">Bonus</span><span class="day-text">Las 7 frases que le digo a mis pacientes cuando sienten que no pueden m&aacute;s</span></div>
+          </div>
           <a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 6 — VALUE PROP #2 (text left, image right — reversed) -->
-  <section class="value-prop bg-cream">
-    <div class="container">
-      <div class="vp-grid reverse">
-        <div class="vp-image reveal-right"><img src="img/consultorio.webp" loading="lazy" decoding="async" alt="Dra. Vanessa Flores en su consultorio" width="530" height="398"></div>
-        <div class="vp-text reveal-left">
-          <span class="vp-badge">Paso a paso</span>
-          <span class="label">El patr&oacute;n oculto</span>
-          <h2>El ciclo de alerta que nunca se apaga</h2>
-          <p>Tu sistema nervioso aprendi&oacute; a mantenerse en guardia. No porque seas ansiosa por naturaleza, sino porque en alg&uacute;n punto esa alerta fue necesaria. El problema es que nunca recibi&oacute; la se&ntilde;al de que pod&iacute;a descansar. Modo Calma te muestra el mecanismo exacto y c&oacute;mo empezar a salir de &eacute;l.</p>
-          <a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 7 — VALUE PROP #3 (image left, text right) -->
-  <section class="value-prop bg-white">
-    <div class="container">
-      <div class="vp-grid">
-        <div class="vp-image reveal-left"><img src="img/conferencia.webp" loading="lazy" decoding="async" alt="Dra. Vanessa Flores dando una conferencia" width="530" height="398"></div>
-        <div class="vp-text reveal-right">
-          <span class="label">El primer paso</span>
-          <h2>Qu&eacute; hacer con este conocimiento desde hoy</h2>
-          <p>El protocolo no solo explica. Te da orientaci&oacute;n pr&aacute;ctica desde el primer d&iacute;a. Cu&aacute;ndo buscar ayuda profesional, c&oacute;mo hablar de esto con tu entorno y qu&eacute; cambios peque&ntilde;os generan el mayor impacto en tu sistema nervioso.</p>
-          <a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIFFERENTIATORS (6 cards 3x2 grid) -->
-  <section class="diff">
-    <div class="container">
-      <div class="section-header">
-        <h2>Lo que hace diferente a este protocolo</h2>
-        <p>No es un art&iacute;culo m&aacute;s de internet. Es un sistema cl&iacute;nico real.</p>
-      </div>
-      <div class="diff-grid">
-        <div class="diff-card reveal">
-          <div class="diff-num">01</div>
-          <h3>Escrita por una psiquiatra activa, no una coach sin credenciales</h3>
-          <p></p>
-        </div>
-        <div class="diff-card reveal reveal-d1">
-          <div class="diff-num">02</div>
-          <h3>Basada en neurociencia real, explicada en lenguaje humano</h3>
-          <p></p>
-        </div>
-        <div class="diff-card reveal reveal-d2">
-          <div class="diff-num">03</div>
-          <h3>5 d&iacute;as con pr&aacute;ctica concreta, no cap&iacute;tulos para leer y guardar</h3>
-          <p></p>
-        </div>
-        <div class="diff-card reveal">
-          <div class="diff-num">04</div>
-          <h3>Dise&ntilde;ada para mujeres que ya lo intentaron todo</h3>
-          <p></p>
-        </div>
-        <div class="diff-card reveal reveal-d1">
-          <div class="diff-num">05</div>
-          <h3>Incluye la explicaci&oacute;n cl&iacute;nica de por qu&eacute; funciona cada pr&aacute;ctica</h3>
-          <p></p>
-        </div>
-        <div class="diff-card reveal reveal-d2">
-          <div class="diff-num">06</div>
-          <h3>Sin estigma, sin juicio, desde la experiencia real con pacientes</h3>
-          <p></p>
-        </div>
-      </div>
-      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a></div>
-    </div>
-  </section>
 
   <!-- AUTHOR (Social Proof / Authority) -->
   <section class="author">
@@ -1106,34 +1161,6 @@
     </div>
   </section>
 
-  <!-- SECTION 10 — HOW IT WORKS (3 steps) -->
-  <section class="how-works">
-    <div class="container">
-      <div class="section-header">
-        <h2>C&oacute;mo funciona</h2>
-        <p>Tres pasos simples. Sin complicaciones.</p>
-      </div>
-      <div class="how-grid">
-        <div class="how-step reveal">
-          <div class="how-step-icon">1</div>
-          <h3>Compra el protocolo</h3>
-          <p>Pago seguro con PayPal en menos de 2 minutos.</p>
-        </div>
-        <div class="how-step reveal reveal-d1">
-          <div class="how-step-icon">2</div>
-          <h3>Descarga el PDF</h3>
-          <p>Acceso inmediato. Compatible con cualquier dispositivo.</p>
-        </div>
-        <div class="how-step reveal reveal-d2">
-          <div class="how-step-icon">3</div>
-          <h3>Sigue el protocolo</h3>
-          <p>Un d&iacute;a a la vez, a tu ritmo, desde donde est&aacute;s.</p>
-        </div>
-      </div>
-      <div class="how-dots-nav"><span class="active"></span><span></span><span></span></div>
-      <div class="cta-wrap reveal"><a href="#pricing" class="btn btn-primary">Obtener Modo Calma</a></div>
-    </div>
-  </section>
 
   <!-- SECTION 11 — SECOND SOCIAL PROOF (single quote) -->
   <section class="social-proof-2">
